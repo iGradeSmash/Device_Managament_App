@@ -133,7 +133,7 @@ namespace Device_Management_App.Classes
         public void GetDeviceData(DataGridView dataGridView)
         {
 
-            sqlStatement = "Select * from [Devices]";
+            sqlStatement = "SELECT * FROM [Devices]";
             
             try
             {
@@ -151,6 +151,27 @@ namespace Device_Management_App.Classes
                 MessageBox.Show(ex.Message);
             }
 
+        }
+        public void Search(string txtBox, DataGridView dataGridView)
+        {
+            sqlStatement = $"SELECT * FROM [Devices] WHERE [DESCRIPTION] LIKE '%{txtBox}%'";
+
+            try
+            {
+
+                dataTable = new DataTable();
+                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dataGridView.DataSource = dataTable;
+                sqlConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

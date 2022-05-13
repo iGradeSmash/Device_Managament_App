@@ -153,7 +153,7 @@ namespace Device_Management_App
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            conn.Search(txtSearch.Text, dgvAvailableDevices);
         }
 
         private void dgvAvailableDevices_CellContentClick(object sender, DataGridViewCellEventArgs e)
