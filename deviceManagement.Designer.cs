@@ -75,7 +75,7 @@ namespace Device_Management_App
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 459);
+            this.panel1.Size = new System.Drawing.Size(257, 492);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -163,13 +163,14 @@ namespace Device_Management_App
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(257, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(386, 459);
+            this.panel2.Size = new System.Drawing.Size(387, 492);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Miriam Mono CLM", 9.75F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(247)))));
             this.label11.Location = new System.Drawing.Point(187, 341);
@@ -254,7 +255,7 @@ namespace Device_Management_App
             this.forgetPasswordBtn.Font = new System.Drawing.Font("Miriam Mono CLM", 9.749999F, System.Drawing.FontStyle.Italic);
             this.forgetPasswordBtn.Location = new System.Drawing.Point(187, 260);
             this.forgetPasswordBtn.Name = "forgetPasswordBtn";
-            this.forgetPasswordBtn.Size = new System.Drawing.Size(146, 39);
+            this.forgetPasswordBtn.Size = new System.Drawing.Size(153, 39);
             this.forgetPasswordBtn.TabIndex = 6;
             this.forgetPasswordBtn.Text = "Forget Password ?";
             this.forgetPasswordBtn.UseVisualStyleBackColor = false;
@@ -374,12 +375,13 @@ namespace Device_Management_App
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(643, 459);
+            this.ClientSize = new System.Drawing.Size(644, 492);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "deviceManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.TopMost = true;
             this.panel1.ResumeLayout(false);

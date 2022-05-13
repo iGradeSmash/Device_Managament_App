@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Management_App.Utility;
 
@@ -12,18 +13,20 @@ namespace Device_Management_App.Classes
         
        private  SqlCommand command;
         private SqlDataReader reader;
-        private SqlDataAdapter adapter = new SqlDataAdapter();
-        private SqlConnection sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
+        private SqlDataAdapter adapter;
+        private SqlConnection sqlConnection;
         string sqlStatement, sqlOutput = "";
+        private DataTable dataTable;
         
 
-        public void GetAllData(DataGridView dataGridView, string table)
+        public async Task GetAllData(DataGridView dataGridView, string table)
         {
             List<Devices> devices = new List<Devices>();
             DataTable dataTable = new DataTable();
             dataGridView = new DataGridView();
             try
             {
+                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
                 sqlConnection.Open();
                 sqlStatement = $"SELECT * FROM {table}";
                 command = new SqlCommand(sqlStatement, sqlConnection);
@@ -73,17 +76,21 @@ namespace Device_Management_App.Classes
         {
             try
             {
+                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
+                adapter = new SqlDataAdapter();
                 sqlConnection.Open();
-                sqlStatement = "INSERT INTO Devices([Description], [Type], [Brand], [Model],[Status])" +
-                    $"VALUES('{devices.Description}','{devices.Type}','{devices.Brand}', '{devices.Model}', '{devices.Status}')";
+                sqlStatement = "INSERT INTO Devices([Description], [Type], [Brand], [Model],[Barcode],[Status])" +
+                    $"VALUES('{devices.Description}','{devices.Type}','{devices.Brand}', '{devices.Model}', '{devices.Barcode}','{devices.Status}')";
 
                 command = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.InsertCommand = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show("From function save Data:"+devices.Description);
+
+                MessageBox.Show($"Success - Device{devices.Description} Saved!");
+
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: "+ex.Message);
             }
             finally
             {
@@ -93,5 +100,58 @@ namespace Device_Management_App.Classes
                 sqlConnection.Close ();
             }
         }
+
+        public void UpdateDeviceData(Devices devices)
+        {
+            try
+            {
+                sqlConnection= new SqlConnection(Constants.DATABASE_CONNECTION);
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter();
+                sqlStatement = $"UPDATE Devices SET [Description] = '{devices.Description}', [Type] = '{devices.Type}', [Brand] ='{devices.Brand}', [Model]='{devices.Model}', [Barcode] ='{devices.Barcode}', [Status] = '{devices.Status}'WHERE Id = '{devices.Id}'";
+
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                adapter.UpdateCommand = new SqlCommand(sqlStatement, sqlConnection);
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                MessageBox.Show($"Success - Device{devices.Description} Upated!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                command.Dispose();
+                adapter.Dispose();
+                sqlConnection.Dispose();
+                sqlConnection.Close();
+            }
+        }
+
+        public void GetDeviceData(DataGridView dataGridView)
+        {
+
+            sqlStatement = "Select * from [Devices]";
+            
+            try
+            {
+                
+                dataTable = new DataTable();
+                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dataGridView.DataSource = dataTable;
+                sqlConnection.Close();
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }

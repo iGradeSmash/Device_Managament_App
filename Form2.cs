@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Device_Managament_App;
 using Device_Management_App.Classes;
 
 namespace Device_Management_App
@@ -7,15 +9,15 @@ namespace Device_Management_App
     public partial class Form2 : Form
     {
         private string _tableName = "";
-        private Connection conn = new Connection();
-
+        private Connection conn;
+        int Id;
         public Form2()
         {
             
             _tableName = "Devices";
            
             InitializeComponent();
-
+            conn = new Connection();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace Device_Management_App
         private void button1_Click(object sender, EventArgs e)
         {
             mainLabel.Text = "All Devices";
-            conn.GetAllData(dbDataGrid, _tableName);
+            conn.GetAllData(dgvAvailableDevices, _tableName);
 
         }
 
@@ -127,28 +129,63 @@ namespace Device_Management_App
 
         private void cbxStatus_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbxStatus.Checked)
-            {
-                cbxStatus.Text = "Active";
-            }
-            else
-            {
-                cbxStatus.Text = "Inactive";
-            }
+           
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_ClickAsync(object sender, EventArgs e)
         {
             Devices devices = new Devices();
 
-            devices.Status = cbxStatus.Checked;
-            devices.Model = tbxDeviceModel.Text;
-            devices.Brand = tbxDeviceBrand.Text;
-            devices.Description = tbxDeviceName.Text;
-            devices.Type = cbxDeviceType.SelectedValue.ToString();
-
+            
             MessageBox.Show(devices.Description);
             conn.SaveDeviceData(devices);
+            saveData();
+        }
+        public async Task saveData()
+        {
+       
+        }
+
+        private void tbView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvAvailableDevices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnDevicesFrom_Click(object sender, EventArgs e)
+        {
+            DeviceForm deviceForm = new DeviceForm();
+
+            deviceForm.ShowDialog();
+        }
+
+        private void pbRefresh_Click(object sender, EventArgs e)
+        {
+            conn.GetDeviceData(dgvAvailableDevices);
+        }
+
+        private void lblRefresh_Click(object sender, EventArgs e)
+        {
+            conn.GetDeviceData(dgvAvailableDevices);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
