@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Device_Managament_App.Utility;
+using Device_Management_App.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +16,12 @@ namespace Device_Managament_App
     public partial class CreateUserForm : Form
     {
         Regex validate_emailaddress = email_validation();
+        Connection con;
 
         public CreateUserForm()
         {
             InitializeComponent();
+            con = new Connection();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,10 +41,10 @@ namespace Device_Managament_App
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-            if (validate_emailaddress.IsMatch(textBox1.Text) != true)
+            if (validate_emailaddress.IsMatch(txtAddress.Text) != true)
             {
                 errorMessageLabel.Text = "Invalid Email Address!";
-                textBox2.Focus();
+                txtEmail.Focus();
                 return;
             }
             else
@@ -77,9 +81,25 @@ namespace Device_Managament_App
 
         private void btnDevicesSave_Click(object sender, EventArgs e)
         {
-            if (txtPassword != txtConfirmPassword)
+            errorMessageConfirmPassword.Text = "";
+            mtxtTelephone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            User user = new User();
+            user.Email = txtEmail.Text;
+            user.Password = txtPassword.Text;
+            user.Department = txtDepartment.Text;
+            user.Telephone = mtxtTelephone.Text;
+            user.Address = txtAddress.Text;
+            user.Description = txtDescription.Text;
+            user.RoleId = 3;
+            user.Name = txtName.Text;
+
+            if (txtPassword.Text != txtConfirmPassword.Text )
             {
                 errorMessageConfirmPassword.Text = "Password and Confirm Password do not match!";
+            }
+            else
+            {
+                con.CreateUser(user);
             }
         }
     }

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Managament_App;
+using Device_Managament_App.Utility;
 using Device_Management_App.Classes;
 
 namespace Device_Management_App
@@ -15,7 +16,8 @@ namespace Device_Management_App
         {
             
             _tableName = "Devices";
-           
+      
+            MessageBox.Show(GlobalVariables.RoleId.ToString());
             InitializeComponent();
             conn = new Connection();
         }
@@ -26,6 +28,18 @@ namespace Device_Management_App
             this.deviceTypesTableAdapter.Fill(this.device_Management_dbDataSet1.DeviceTypes);
             // TODO: This line of code loads data into the 'device_Management_dbDataSet.Devices' table. You can move, or remove it, as needed.
             this.devicesTableAdapter.Fill(this.device_Management_dbDataSet.Devices);
+            if (GlobalVariables.RoleId == 2)
+            {
+                btnReports.Enabled = true;
+                btnReports.Visible = true;
+                if (GlobalVariables.RoleId == 1)
+                {
+                    btnReports.Enabled = true;
+                    btnReports.Visible = true;
+                    btnUsers.Enabled = true;
+                    btnUsers.Visible = true;
+                }
+            }
 
         }
         public void sideMenuPanel_Click(object sender, EventArgs e)

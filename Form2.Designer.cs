@@ -65,11 +65,11 @@
             this.devicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.device_Management_dbDataSet = new Device_Managament_App.Device_Management_dbDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLoanRequests = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnDevicesFrom = new System.Windows.Forms.Button();
             this.mainLabel = new System.Windows.Forms.Label();
@@ -483,11 +483,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btnLoanRequests);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnReports);
             this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Controls.Add(this.btnDevicesFrom);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -496,21 +496,21 @@
             this.panel1.Size = new System.Drawing.Size(1068, 69);
             this.panel1.TabIndex = 6;
             // 
-            // button5
+            // btnLoanRequests
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button5.Location = new System.Drawing.Point(441, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 50);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Loan Request";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnLoanRequests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnLoanRequests.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoanRequests.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
+            this.btnLoanRequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoanRequests.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoanRequests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnLoanRequests.Location = new System.Drawing.Point(441, 10);
+            this.btnLoanRequests.Name = "btnLoanRequests";
+            this.btnLoanRequests.Size = new System.Drawing.Size(150, 50);
+            this.btnLoanRequests.TabIndex = 5;
+            this.btnLoanRequests.Text = "Loan Request";
+            this.btnLoanRequests.UseVisualStyleBackColor = false;
+            this.btnLoanRequests.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnClose
             // 
@@ -551,35 +551,39 @@
             this.label1.Text = "Device Management";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button4
+            // btnReports
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button4.Location = new System.Drawing.Point(780, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 50);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Reports";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReports.Enabled = false;
+            this.btnReports.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnReports.Location = new System.Drawing.Point(607, 10);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(150, 50);
+            this.btnReports.TabIndex = 2;
+            this.btnReports.Text = "Reports";
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Visible = false;
             // 
             // btnUsers
             // 
             this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsers.Enabled = false;
             this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnUsers.Location = new System.Drawing.Point(609, 10);
+            this.btnUsers.Location = new System.Drawing.Point(784, 10);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(150, 50);
             this.btnUsers.TabIndex = 1;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Visible = false;
             // 
             // btnDevicesFrom
             // 
@@ -721,11 +725,11 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLoanRequests;
         private System.Windows.Forms.PictureBox pbRefresh;
         private System.Windows.Forms.Label lblRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;

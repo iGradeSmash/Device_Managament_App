@@ -218,5 +218,30 @@ namespace Device_Management_App.Classes
             }
         }
 
+        public void CreateUser(User user)
+        {
+            try
+            {
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter();
+                sqlStatement = $@"INSERT INTO Users([RoleId], [Name], [Address], [Telephone],[Email], [Department], [Description],[CreatedAt], [Password])" +
+                    $@"VALUES('{user.RoleId}','{user.Name}','{user.Address}','{user.Telephone}','{user.Email}','{user.Department}','{user.Description}',GETDATE(),'{GlobalVariables.PasswordEncode(user.Password)}')";
+                    command = new SqlCommand(sqlStatement, sqlConnection);
+                    adapter.InsertCommand = command;
+                    adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show($"{user.Name} Created Successfully!");
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                command.Dispose();
+                adapter.Dispose();
+                sqlConnection.Dispose();
+                sqlConnection.Close();
+            }
+        }
+
     }
 }

@@ -88,7 +88,8 @@ namespace Device_Management_App
                 show_Message_Dialog("Please enter password", true);
                 return;
             }
-            conn.GetUserID(usernameTxtBx.Text, GlobalVariables.PasswordEncode(passwordTxtBx.Text));
+            
+           conn.GetUserID(usernameTxtBx.Text, GlobalVariables.PasswordEncode(passwordTxtBx.Text));
 
             if (GlobalVariables.UserID > 0)
             {
