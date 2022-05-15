@@ -153,7 +153,8 @@ namespace Device_Management_App
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            conn.Search(txtSearch.Text, dgvAvailableDevices);
+            conn.Search(txtSearch.Text,cmbxSearchBy.Text ,dgvAvailableDevices);
+            lblSearching.Text = cmbxSearchBy.Text;
         }
 
         private void dgvAvailableDevices_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -175,12 +176,12 @@ namespace Device_Management_App
 
         private void pbRefresh_Click(object sender, EventArgs e)
         {
-            conn.GetDeviceData(dgvAvailableDevices);
+            conn.GetAvailableDeviceData(dgvAvailableDevices);
         }
 
         private void lblRefresh_Click(object sender, EventArgs e)
         {
-            conn.GetDeviceData(dgvAvailableDevices);
+            conn.GetAvailableDeviceData(dgvAvailableDevices);
         }
 
         private void button5_Click(object sender, EventArgs e)

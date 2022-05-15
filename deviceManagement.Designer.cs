@@ -299,6 +299,7 @@ namespace Device_Management_App
             this.passwordTxtBx.TabIndex = 8;
             this.passwordTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passwordTxtBx.UseSystemPasswordChar = true;
+            this.passwordTxtBx.TextChanged += new System.EventHandler(this.passwordTxtBx_TextChanged);
             // 
             // pictureBox3
             // 
@@ -332,6 +333,7 @@ namespace Device_Management_App
             this.usernameTxtBx.Size = new System.Drawing.Size(317, 23);
             this.usernameTxtBx.TabIndex = 7;
             this.usernameTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usernameTxtBx.TextChanged += new System.EventHandler(this.usernameTxtBx_TextChanged);
             // 
             // pictureBox2
             // 

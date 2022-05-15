@@ -4,20 +4,21 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Device_Managament_App.Utility;
 using Device_Management_App.Utility;
 
 namespace Device_Management_App.Classes
 {
     public class Connection
     {
-        
-       private  SqlCommand command;
+
+        private SqlCommand command;
         private SqlDataReader reader;
         private SqlDataAdapter adapter;
-        private SqlConnection sqlConnection;
+        private SqlConnection sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
         string sqlStatement, sqlOutput = "";
         private DataTable dataTable;
-        
+
 
         public async Task GetAllData(DataGridView dataGridView, string table)
         {
@@ -26,7 +27,6 @@ namespace Device_Management_App.Classes
             dataGridView = new DataGridView();
             try
             {
-                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
                 sqlConnection.Open();
                 sqlStatement = $"SELECT * FROM {table}";
                 command = new SqlCommand(sqlStatement, sqlConnection);
@@ -53,13 +53,14 @@ namespace Device_Management_App.Classes
                     });
                 }
 
-                
+
                 dataTable.Load(reader);
 
-                    dataGridView.DataSource = dataTable;
-                
-                    
-            }catch (Exception ex)
+                dataGridView.DataSource = dataTable;
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -76,7 +77,6 @@ namespace Device_Management_App.Classes
         {
             try
             {
-                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
                 adapter = new SqlDataAdapter();
                 sqlConnection.Open();
                 sqlStatement = "INSERT INTO Devices([Description], [Type], [Brand], [Model],[Barcode],[Status])" +
@@ -88,16 +88,17 @@ namespace Device_Management_App.Classes
 
                 MessageBox.Show($"Success - Device{devices.Description} Saved!");
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
                 command.Dispose();
                 adapter.Dispose();
                 sqlConnection.Dispose();
-                sqlConnection.Close ();
+                sqlConnection.Close();
             }
         }
 
@@ -105,7 +106,6 @@ namespace Device_Management_App.Classes
         {
             try
             {
-                sqlConnection= new SqlConnection(Constants.DATABASE_CONNECTION);
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter();
                 sqlStatement = $"UPDATE Devices SET [Description] = '{devices.Description}', [Type] = '{devices.Type}', [Brand] ='{devices.Brand}', [Model]='{devices.Model}', [Barcode] ='{devices.Barcode}', [Status] = '{devices.Status}'WHERE Id = '{devices.Id}'";
@@ -134,33 +134,11 @@ namespace Device_Management_App.Classes
         {
 
             sqlStatement = "SELECT * FROM [Devices]";
-            
-            try
-            {
-                
-                dataTable = new DataTable();
-                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
-                sqlConnection.Open();
-                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
-                adapter.Fill(dataTable);
-                dataGridView.DataSource = dataTable;
-                sqlConnection.Close();
-
-            }catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-        public void Search(string txtBox, DataGridView dataGridView)
-        {
-            sqlStatement = $"SELECT * FROM [Devices] WHERE [DESCRIPTION] LIKE '%{txtBox}%'";
 
             try
             {
 
                 dataTable = new DataTable();
-                sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
                 adapter.Fill(dataTable);
@@ -169,6 +147,72 @@ namespace Device_Management_App.Classes
 
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void GetAvailableDeviceData(DataGridView dataGridView)
+        {
+
+            sqlStatement = "SELECT * FROM [Devices] Where Status = 1";
+
+            try
+            {
+
+                dataTable = new DataTable();
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dataGridView.DataSource = dataTable;
+                sqlConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void Search(string txtBox, string option, DataGridView dataGridView)
+        {
+            sqlStatement = $"SELECT * FROM [Devices] WHERE [{option}] LIKE '%{txtBox}%'";
+
+            try
+            {
+
+                dataTable = new DataTable();
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dataGridView.DataSource = dataTable;
+                sqlConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void GetUserID(string email, string password)
+        {
+            try
+            {
+              sqlStatement = $"SELECT * FROM Users WHERE Email='{email}' AND Password='{password}'";
+                sqlConnection.Open();
+                command= new SqlCommand(sqlStatement, sqlConnection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                   GlobalVariables.UserID = reader.GetInt32(0);
+                   GlobalVariables.RoleId = reader.GetInt32(1);
+                   GlobalVariables.UserName = reader.GetString(5);
+                }
+                sqlConnection.Close();
+            }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
