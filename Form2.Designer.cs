@@ -46,6 +46,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblSearching = new System.Windows.Forms.Label();
+            this.cmbxSearchBy = new System.Windows.Forms.ComboBox();
             this.lblRefresh = new System.Windows.Forms.Label();
             this.pbRefresh = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -77,8 +79,6 @@
             this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devicesTableAdapter = new Device_Managament_App.Device_Management_dbDataSetTableAdapters.DevicesTableAdapter();
             this.deviceTypesTableAdapter = new Device_Managament_App.Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter();
-            this.cmbxSearchBy = new System.Windows.Forms.ComboBox();
-            this.lblSearching = new System.Windows.Forms.Label();
             this.connectionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.connectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sideMenuPanel2.SuspendLayout();
@@ -268,6 +268,33 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1068, 530);
             this.panel4.TabIndex = 7;
+            // 
+            // lblSearching
+            // 
+            this.lblSearching.AutoSize = true;
+            this.lblSearching.Font = new System.Drawing.Font("Miriam Mono CLM", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblSearching.Location = new System.Drawing.Point(438, 476);
+            this.lblSearching.Name = "lblSearching";
+            this.lblSearching.Size = new System.Drawing.Size(0, 17);
+            this.lblSearching.TabIndex = 8;
+            // 
+            // cmbxSearchBy
+            // 
+            this.cmbxSearchBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbxSearchBy.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic);
+            this.cmbxSearchBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            this.cmbxSearchBy.FormattingEnabled = true;
+            this.cmbxSearchBy.Items.AddRange(new object[] {
+            "Id",
+            "Description",
+            "Type",
+            "Brand",
+            "Model",
+            "Barcode"});
+            this.cmbxSearchBy.Location = new System.Drawing.Point(805, 12);
+            this.cmbxSearchBy.Name = "cmbxSearchBy";
+            this.cmbxSearchBy.Size = new System.Drawing.Size(244, 30);
+            this.cmbxSearchBy.TabIndex = 7;
             // 
             // lblRefresh
             // 
@@ -477,7 +504,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button5.Location = new System.Drawing.Point(664, 9);
+            this.button5.Location = new System.Drawing.Point(441, 10);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(150, 50);
             this.button5.TabIndex = 5;
@@ -532,7 +559,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button4.Location = new System.Drawing.Point(834, 9);
+            this.button4.Location = new System.Drawing.Point(780, 10);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 50);
             this.button4.TabIndex = 2;
@@ -547,7 +574,7 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnUsers.Location = new System.Drawing.Point(481, 10);
+            this.btnUsers.Location = new System.Drawing.Point(609, 10);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(150, 50);
             this.btnUsers.TabIndex = 1;
@@ -608,33 +635,6 @@
             // deviceTypesTableAdapter
             // 
             this.deviceTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // cmbxSearchBy
-            // 
-            this.cmbxSearchBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbxSearchBy.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic);
-            this.cmbxSearchBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            this.cmbxSearchBy.FormattingEnabled = true;
-            this.cmbxSearchBy.Items.AddRange(new object[] {
-            "Id",
-            "Description",
-            "Type",
-            "Brand",
-            "Model",
-            "Barcode"});
-            this.cmbxSearchBy.Location = new System.Drawing.Point(805, 12);
-            this.cmbxSearchBy.Name = "cmbxSearchBy";
-            this.cmbxSearchBy.Size = new System.Drawing.Size(244, 30);
-            this.cmbxSearchBy.TabIndex = 7;
-            // 
-            // lblSearching
-            // 
-            this.lblSearching.AutoSize = true;
-            this.lblSearching.Font = new System.Drawing.Font("Miriam Mono CLM", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.lblSearching.Location = new System.Drawing.Point(438, 476);
-            this.lblSearching.Name = "lblSearching";
-            this.lblSearching.Size = new System.Drawing.Size(0, 17);
-            this.lblSearching.TabIndex = 8;
             // 
             // connectionBindingSource1
             // 

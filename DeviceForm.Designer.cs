@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDeviceDescription = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -61,11 +62,11 @@
             this.deviceTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deviceTypesTableAdapter = new Device_Managament_App.Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter();
             this.cmbxType = new System.Windows.Forms.ComboBox();
-            this.deviceTypesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deviceTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deviceTypesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.deviceTypesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnClose = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevices)).BeginInit();
@@ -73,10 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,6 +91,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 48);
             this.panel1.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(757, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 40);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label5
             // 
@@ -194,7 +211,7 @@
             this.chkbxStatus.Checked = true;
             this.chkbxStatus.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkbxStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkbxStatus.Location = new System.Drawing.Point(212, 308);
+            this.chkbxStatus.Location = new System.Drawing.Point(64, 301);
             this.chkbxStatus.Name = "chkbxStatus";
             this.chkbxStatus.Size = new System.Drawing.Size(82, 25);
             this.chkbxStatus.TabIndex = 12;
@@ -209,7 +226,7 @@
             this.btnDevicesSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevicesSave.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevicesSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnDevicesSave.Location = new System.Drawing.Point(212, 343);
+            this.btnDevicesSave.Location = new System.Drawing.Point(212, 30);
             this.btnDevicesSave.Name = "btnDevicesSave";
             this.btnDevicesSave.Size = new System.Drawing.Size(250, 50);
             this.btnDevicesSave.TabIndex = 13;
@@ -225,7 +242,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnUpdate.Location = new System.Drawing.Point(526, 343);
+            this.btnUpdate.Location = new System.Drawing.Point(515, 30);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(250, 50);
             this.btnUpdate.TabIndex = 14;
@@ -249,14 +266,14 @@
             this.dgvDevices.AutoGenerateColumns = false;
             this.dgvDevices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDevices.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDevices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDevices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDevices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDevices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -272,11 +289,11 @@
             this.dgvDevices.Name = "dgvDevices";
             this.dgvDevices.ReadOnly = true;
             this.dgvDevices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDevices.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDevices.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDevices.Size = new System.Drawing.Size(800, 284);
             this.dgvDevices.TabIndex = 0;
             this.dgvDevices.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDevices_CellDoubleClick);
@@ -373,50 +390,47 @@
             this.cmbxType.TabIndex = 1;
             this.cmbxType.ValueMember = "DeviceTYpes";
             // 
-            // deviceTypesBindingSource3
+            // deviceTypesBindingSource1
             // 
-            this.deviceTypesBindingSource3.DataMember = "DeviceTypes";
-            this.deviceTypesBindingSource3.DataSource = this.deviceManagementdbDataSet1BindingSource;
+            this.deviceTypesBindingSource1.DataMember = "DeviceTypes";
+            this.deviceTypesBindingSource1.DataSource = this.deviceManagementdbDataSet1BindingSource;
             // 
             // deviceManagementdbDataSet1BindingSource
             // 
             this.deviceManagementdbDataSet1BindingSource.DataSource = this.device_Management_dbDataSet1;
             this.deviceManagementdbDataSet1BindingSource.Position = 0;
             // 
-            // deviceTypesBindingSource1
+            // deviceTypesBindingSource3
             // 
-            this.deviceTypesBindingSource1.DataMember = "DeviceTypes";
-            this.deviceTypesBindingSource1.DataSource = this.deviceManagementdbDataSet1BindingSource;
+            this.deviceTypesBindingSource3.DataMember = "DeviceTypes";
+            this.deviceTypesBindingSource3.DataSource = this.deviceManagementdbDataSet1BindingSource;
             // 
             // deviceTypesBindingSource2
             // 
             this.deviceTypesBindingSource2.DataMember = "DeviceTypes";
             this.deviceTypesBindingSource2.DataSource = this.deviceManagementdbDataSet1BindingSource;
             // 
-            // btnClose
+            // groupBox1
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(757, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 40);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.groupBox1.Controls.Add(this.btnDevicesSave);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            this.groupBox1.Location = new System.Drawing.Point(0, 321);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(791, 87);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Actions";
             // 
             // DeviceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 698);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbxType);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDevicesSave);
             this.Controls.Add(this.chkbxStatus);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.label4);
@@ -441,10 +455,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,5 +502,6 @@
         private System.Windows.Forms.BindingSource deviceTypesBindingSource2;
         private System.Windows.Forms.BindingSource deviceTypesBindingSource3;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

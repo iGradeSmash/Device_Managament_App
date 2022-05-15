@@ -1,4 +1,5 @@
-﻿using Device_Managament_App.Utility;
+﻿using Device_Managament_App;
+using Device_Managament_App.Utility;
 using Device_Management_App.Classes;
 using System;
 using System.Collections.Generic;
@@ -131,6 +132,14 @@ namespace Device_Management_App
         private void passwordTxtBx_TextChanged(object sender, EventArgs e)
         {
             errorMessageLabel.Text = "";
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            CreateUserForm createUserForm = new CreateUserForm();
+            this.Hide();
+            createUserForm.ShowDialog();
+            this.Show();
         }
     }
 }
