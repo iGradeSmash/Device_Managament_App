@@ -121,87 +121,87 @@
             // lblDeviceDescription
             // 
             this.lblDeviceDescription.AutoSize = true;
-            this.lblDeviceDescription.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeviceDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeviceDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.lblDeviceDescription.Location = new System.Drawing.Point(60, 62);
             this.lblDeviceDescription.Name = "lblDeviceDescription";
-            this.lblDeviceDescription.Size = new System.Drawing.Size(122, 24);
+            this.lblDeviceDescription.Size = new System.Drawing.Size(97, 21);
             this.lblDeviceDescription.TabIndex = 1;
             this.lblDeviceDescription.Text = "Description";
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(212, 62);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(564, 31);
+            this.txtDescription.Size = new System.Drawing.Size(564, 23);
             this.txtDescription.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.label1.Location = new System.Drawing.Point(60, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 24);
+            this.label1.Size = new System.Drawing.Size(47, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Type";
             // 
             // txtBrand
             // 
-            this.txtBrand.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrand.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrand.Location = new System.Drawing.Point(212, 150);
             this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(564, 31);
+            this.txtBrand.Size = new System.Drawing.Size(564, 23);
             this.txtBrand.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.label2.Location = new System.Drawing.Point(60, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 24);
+            this.label2.Size = new System.Drawing.Size(56, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "Brand";
             // 
             // txtModel
             // 
-            this.txtModel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModel.Location = new System.Drawing.Point(212, 202);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(564, 31);
+            this.txtModel.Size = new System.Drawing.Size(564, 23);
             this.txtModel.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.label3.Location = new System.Drawing.Point(60, 202);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 24);
+            this.label3.Size = new System.Drawing.Size(59, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Model";
             // 
             // txtBarcode
             // 
-            this.txtBarcode.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarcode.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBarcode.Location = new System.Drawing.Point(212, 258);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(564, 31);
+            this.txtBarcode.Size = new System.Drawing.Size(564, 23);
             this.txtBarcode.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.label4.Location = new System.Drawing.Point(60, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 24);
+            this.label4.Size = new System.Drawing.Size(76, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Barcode";
             // 
@@ -210,10 +210,10 @@
             this.chkbxStatus.AutoSize = true;
             this.chkbxStatus.Checked = true;
             this.chkbxStatus.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkbxStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkbxStatus.Location = new System.Drawing.Point(64, 301);
+            this.chkbxStatus.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkbxStatus.Location = new System.Drawing.Point(483, 105);
             this.chkbxStatus.Name = "chkbxStatus";
-            this.chkbxStatus.Size = new System.Drawing.Size(82, 25);
+            this.chkbxStatus.Size = new System.Drawing.Size(77, 24);
             this.chkbxStatus.TabIndex = 12;
             this.chkbxStatus.Text = "Active";
             this.chkbxStatus.UseVisualStyleBackColor = true;
@@ -226,7 +226,7 @@
             this.btnDevicesSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevicesSave.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevicesSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnDevicesSave.Location = new System.Drawing.Point(212, 30);
+            this.btnDevicesSave.Location = new System.Drawing.Point(10, 31);
             this.btnDevicesSave.Name = "btnDevicesSave";
             this.btnDevicesSave.Size = new System.Drawing.Size(250, 50);
             this.btnDevicesSave.TabIndex = 13;
@@ -242,7 +242,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnUpdate.Location = new System.Drawing.Point(515, 30);
+            this.btnUpdate.Location = new System.Drawing.Point(305, 31);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(250, 50);
             this.btnUpdate.TabIndex = 14;
@@ -254,9 +254,9 @@
             // 
             this.panel2.Controls.Add(this.dgvDevices);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 414);
+            this.panel2.Location = new System.Drawing.Point(0, 385);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 284);
+            this.panel2.Size = new System.Drawing.Size(800, 313);
             this.panel2.TabIndex = 15;
             // 
             // dgvDevices
@@ -268,7 +268,7 @@
             this.dgvDevices.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -289,13 +289,14 @@
             this.dgvDevices.Name = "dgvDevices";
             this.dgvDevices.ReadOnly = true;
             this.dgvDevices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dgvDevices.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDevices.Size = new System.Drawing.Size(800, 284);
+            this.dgvDevices.Size = new System.Drawing.Size(800, 313);
             this.dgvDevices.TabIndex = 0;
+            this.dgvDevices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDevices_CellContentClick);
             this.dgvDevices.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDevices_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -381,12 +382,12 @@
             this.cmbxType.DataSource = this.deviceTypesBindingSource1;
             this.cmbxType.DisplayMember = "DeviceTYpes";
             this.cmbxType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbxType.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbxType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbxType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.cmbxType.FormattingEnabled = true;
             this.cmbxType.Location = new System.Drawing.Point(212, 108);
             this.cmbxType.Name = "cmbxType";
-            this.cmbxType.Size = new System.Drawing.Size(216, 30);
+            this.cmbxType.Size = new System.Drawing.Size(216, 25);
             this.cmbxType.TabIndex = 1;
             this.cmbxType.ValueMember = "DeviceTYpes";
             // 
@@ -414,11 +415,11 @@
             // 
             this.groupBox1.Controls.Add(this.btnDevicesSave);
             this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            this.groupBox1.Location = new System.Drawing.Point(0, 321);
+            this.groupBox1.Location = new System.Drawing.Point(212, 298);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(791, 87);
+            this.groupBox1.Size = new System.Drawing.Size(564, 87);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";

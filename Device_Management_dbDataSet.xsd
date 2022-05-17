@@ -89,56 +89,66 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
               <Mapping SourceColumn="Barcode" DataSetColumn="Barcode" />
               <Mapping SourceColumn="Status" DataSetColumn="Status" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Device_Management_dbConnectionString (Settings)" DbObjectName="Device_Management_db.dbo.Devices" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM dbo.Devices
+Where status = 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Device_Management_dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Device_Management_dbDataSet" msprop:Generator_DataSetName="Device_Management_dbDataSet">
+  <xs:element name="Device_Management_dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Device_Management_dbDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Device_Management_dbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Devices" msprop:Generator_RowEvHandlerName="DevicesRowChangeEventHandler" msprop:Generator_RowDeletedName="DevicesRowDeleted" msprop:Generator_RowDeletingName="DevicesRowDeleting" msprop:Generator_RowEvArgName="DevicesRowChangeEvent" msprop:Generator_TablePropName="Devices" msprop:Generator_RowChangedName="DevicesRowChanged" msprop:Generator_RowChangingName="DevicesRowChanging" msprop:Generator_TableClassName="DevicesDataTable" msprop:Generator_RowClassName="DevicesRow" msprop:Generator_TableVarName="tableDevices" msprop:Generator_UserTableName="Devices">
+        <xs:element name="Devices" msprop:Generator_RowClassName="DevicesRow" msprop:Generator_RowEvHandlerName="DevicesRowChangeEventHandler" msprop:Generator_RowDeletedName="DevicesRowDeleted" msprop:Generator_RowDeletingName="DevicesRowDeleting" msprop:Generator_RowEvArgName="DevicesRowChangeEvent" msprop:Generator_TablePropName="Devices" msprop:Generator_RowChangedName="DevicesRowChanged" msprop:Generator_UserTableName="Devices" msprop:Generator_RowChangingName="DevicesRowChanging" msprop:Generator_TableClassName="DevicesDataTable" msprop:Generator_TableVarName="tableDevices">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_UserColumnName="Description" minOccurs="0">
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_UserColumnName="Type" minOccurs="0">
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Brand" msprop:Generator_ColumnPropNameInRow="Brand" msprop:Generator_ColumnPropNameInTable="BrandColumn" msprop:Generator_ColumnVarNameInTable="columnBrand" msprop:Generator_UserColumnName="Brand" minOccurs="0">
+              <xs:element name="Brand" msprop:Generator_UserColumnName="Brand" msprop:Generator_ColumnPropNameInTable="BrandColumn" msprop:Generator_ColumnPropNameInRow="Brand" msprop:Generator_ColumnVarNameInTable="columnBrand" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Model" msprop:Generator_ColumnPropNameInRow="Model" msprop:Generator_ColumnPropNameInTable="ModelColumn" msprop:Generator_ColumnVarNameInTable="columnModel" msprop:Generator_UserColumnName="Model" minOccurs="0">
+              <xs:element name="Model" msprop:Generator_UserColumnName="Model" msprop:Generator_ColumnPropNameInTable="ModelColumn" msprop:Generator_ColumnPropNameInRow="Model" msprop:Generator_ColumnVarNameInTable="columnModel" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Barcode" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" msprop:Generator_ColumnVarNameInTable="columnBarcode" msprop:Generator_UserColumnName="Barcode" minOccurs="0">
+              <xs:element name="Barcode" msprop:Generator_UserColumnName="Barcode" msprop:Generator_ColumnPropNameInTable="BarcodeColumn" msprop:Generator_ColumnPropNameInRow="Barcode" msprop:Generator_ColumnVarNameInTable="columnBarcode" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Managament_App.Utility;
-using Device_Management_App.Utility;
 
 namespace Device_Management_App.Classes
 {
@@ -15,12 +14,12 @@ namespace Device_Management_App.Classes
         private SqlCommand command;
         private SqlDataReader reader;
         private SqlDataAdapter adapter;
-        private SqlConnection sqlConnection = new SqlConnection(Constants.DATABASE_CONNECTION);
-        string sqlStatement, sqlOutput = "";
+        private SqlConnection sqlConnection = new SqlConnection(UtilManager.Constants.DATABASE_CONNECTION);
+        string sqlStatement= "";
         private DataTable dataTable;
 
-
-        public async Task GetAllData(DataGridView dataGridView, string table)
+        /* Device Data Queries*/
+        public async Task GetAllData(DataGridView dataGridView)
         {
             List<Devices> devices = new List<Devices>();
             DataTable dataTable = new DataTable();
@@ -28,31 +27,10 @@ namespace Device_Management_App.Classes
             try
             {
                 sqlConnection.Open();
-                sqlStatement = $"SELECT * FROM {table}";
+                sqlStatement = $"SELECT * FROM [Devices]";
                 command = new SqlCommand(sqlStatement, sqlConnection);
 
                 reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    devices.Add(new Devices
-                    {
-                        Id = (int)reader.GetValue(0)
-                    ,
-                        Description = reader.GetValue(1).ToString()
-                    ,
-                        Type = reader.GetValue(2).ToString()
-                    ,
-                        Brand = reader.GetValue(3).ToString()
-                    ,
-                        Model = reader.GetValue(4).ToString()
-                    ,
-                        Barcode = reader.GetValue(5).ToString()
-                    ,
-                        Status = (Boolean)reader.GetValue(6)
-                    });
-                }
-
 
                 dataTable.Load(reader);
 
@@ -176,9 +154,10 @@ namespace Device_Management_App.Classes
 
         }
 
-        public void Search(string txtBox, string option, DataGridView dataGridView)
+        /*Active Search Query*/
+        public void Search(string txtBox, string option,string table ,DataGridView dataGridView)
         {
-            sqlStatement = $"SELECT * FROM [Devices] WHERE [{option}] LIKE '%{txtBox}%'";
+            sqlStatement = $"SELECT * FROM [{table}] WHERE [{option}] LIKE '%{txtBox}%'";
 
             try
             {
@@ -197,19 +176,21 @@ namespace Device_Management_App.Classes
             }
         }
 
+
+        /*User Data Queries*/
         public void GetUserID(string email, string password)
         {
             try
             {
-              sqlStatement = $"SELECT * FROM Users WHERE Email='{email}' AND Password='{password}'";
+              sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_USERS} WHERE Email='{email}' AND Password='{password}'";
                 sqlConnection.Open();
                 command= new SqlCommand(sqlStatement, sqlConnection);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                   GlobalVariables.UserID = reader.GetInt32(0);
-                   GlobalVariables.RoleId = reader.GetInt32(1);
-                   GlobalVariables.UserName = reader.GetString(5);
+                    UtilManager.Variables.UserID = reader.GetInt32(0);
+                    UtilManager.Variables.RoleId = reader.GetInt32(1);
+                    UtilManager.Variables.UserName = reader.GetString(2);
                 }
                 sqlConnection.Close();
             }catch (Exception ex)
@@ -224,8 +205,8 @@ namespace Device_Management_App.Classes
             {
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter();
-                sqlStatement = $@"INSERT INTO Users([RoleId], [Name], [Address], [Telephone],[Email], [Department], [Description],[CreatedAt], [Password])" +
-                    $@"VALUES('{user.RoleId}','{user.Name}','{user.Address}','{user.Telephone}','{user.Email}','{user.Department}','{user.Description}',GETDATE(),'{GlobalVariables.PasswordEncode(user.Password)}')";
+                sqlStatement = $@"INSERT INTO {UtilManager.Constants.TABLE_NAME_USERS}([RoleId], [Name], [Address], [Telephone],[Email], [Department], [Description],[CreatedAt], [Password])" +
+                    $@"VALUES('{user.RoleId}','{user.Name}','{user.Address}','{user.Telephone}','{user.Email}','{user.Department}','{user.Description}',GETDATE(),'{UtilManager.Validation.PasswordEncode(user.Password)}')";
                     command = new SqlCommand(sqlStatement, sqlConnection);
                     adapter.InsertCommand = command;
                     adapter.InsertCommand.ExecuteNonQuery();
@@ -240,6 +221,27 @@ namespace Device_Management_App.Classes
                 adapter.Dispose();
                 sqlConnection.Dispose();
                 sqlConnection.Close();
+            }
+        }
+
+        public void GetAllUsers(DataGridView dataGridView)
+        {
+            try
+            {
+                dataTable = new DataTable();
+                sqlConnection.Open();
+                sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_USERS}";
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dataTable = new DataTable();
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close ();
             }
         }
 

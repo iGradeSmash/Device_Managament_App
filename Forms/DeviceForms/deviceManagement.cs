@@ -89,9 +89,9 @@ namespace Device_Management_App
                 return;
             }
             
-           conn.GetUserID(usernameTxtBx.Text, GlobalVariables.PasswordEncode(passwordTxtBx.Text));
+           conn.GetUserID(usernameTxtBx.Text, UtilManager.Validation.PasswordEncode(passwordTxtBx.Text));
 
-            if (GlobalVariables.UserID > 0)
+            if (UtilManager.Variables.UserID > 0)
             {
                 this.Hide();
                 f2.FormClosed += (s, args) => this.Close();

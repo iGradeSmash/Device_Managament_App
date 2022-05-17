@@ -36,21 +36,16 @@
             this.sideMenuPanel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.sideMenuPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
             this.lblSearching = new System.Windows.Forms.Label();
             this.cmbxSearchBy = new System.Windows.Forms.ComboBox();
             this.lblRefresh = new System.Windows.Forms.Label();
-            this.pbRefresh = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblAvailableDevices = new System.Windows.Forms.Label();
@@ -79,20 +74,20 @@
             this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devicesTableAdapter = new Device_Managament_App.Device_Management_dbDataSetTableAdapters.DevicesTableAdapter();
             this.deviceTypesTableAdapter = new Device_Managament_App.Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter();
+            this.pbRefresh = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.connectionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.connectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sideMenuPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.sideMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableDevices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).BeginInit();
@@ -101,6 +96,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -144,16 +145,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Device_Managament_App.Properties.Resources.icons8_report_64;
-            this.pictureBox4.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.AccessibleName = "sideMenuPanel";
@@ -179,16 +170,6 @@
             this.button2.Text = "Users";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Device_Managament_App.Properties.Resources.icons8_select_users_80;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
             // 
             // sideMenuPanel
             // 
@@ -218,26 +199,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Device_Managament_App.Properties.Resources.icons8_workstation_80;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Device_Managament_App.Properties.Resources.icons8_mobile_device_64;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.SystemColors.Control;
@@ -253,7 +214,9 @@
             // 
             // panel4
             // 
+            this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Controls.Add(this.lblUser);
             this.panel4.Controls.Add(this.lblSearching);
             this.panel4.Controls.Add(this.cmbxSearchBy);
             this.panel4.Controls.Add(this.lblRefresh);
@@ -268,6 +231,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1068, 530);
             this.panel4.TabIndex = 7;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Miriam Mono CLM", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            this.lblUser.Location = new System.Drawing.Point(17, 469);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 21);
+            this.lblUser.TabIndex = 9;
             // 
             // lblSearching
             // 
@@ -307,29 +280,6 @@
             this.lblRefresh.TabIndex = 6;
             this.lblRefresh.Text = "Refresh Data";
             this.lblRefresh.Click += new System.EventHandler(this.lblRefresh_Click);
-            // 
-            // pbRefresh
-            // 
-            this.pbRefresh.Image = global::Device_Managament_App.Properties.Resources.icons8_refresh_40;
-            this.pbRefresh.Location = new System.Drawing.Point(72, 28);
-            this.pbRefresh.Name = "pbRefresh";
-            this.pbRefresh.Size = new System.Drawing.Size(30, 30);
-            this.pbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRefresh.TabIndex = 5;
-            this.pbRefresh.TabStop = false;
-            this.pbRefresh.Click += new System.EventHandler(this.pbRefresh_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.Menu;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Device_Managament_App.Properties.Resources.icons8_search_50;
-            this.pictureBox5.Location = new System.Drawing.Point(984, 47);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(65, 31);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
             // 
             // label3
             // 
@@ -577,13 +527,14 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnUsers.Location = new System.Drawing.Point(784, 10);
+            this.btnUsers.Location = new System.Drawing.Point(788, 10);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(150, 50);
             this.btnUsers.TabIndex = 1;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Visible = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnDevicesFrom
             // 
@@ -640,6 +591,69 @@
             // 
             this.deviceTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // pbRefresh
+            // 
+            this.pbRefresh.Image = global::Device_Managament_App.Properties.Resources.icons8_refresh_40;
+            this.pbRefresh.Location = new System.Drawing.Point(72, 28);
+            this.pbRefresh.Name = "pbRefresh";
+            this.pbRefresh.Size = new System.Drawing.Size(30, 30);
+            this.pbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRefresh.TabIndex = 5;
+            this.pbRefresh.TabStop = false;
+            this.pbRefresh.Click += new System.EventHandler(this.pbRefresh_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = global::Device_Managament_App.Properties.Resources.icons8_search_50;
+            this.pictureBox5.Location = new System.Drawing.Point(984, 47);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(65, 31);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Device_Managament_App.Properties.Resources.icons8_report_64;
+            this.pictureBox4.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Device_Managament_App.Properties.Resources.icons8_select_users_80;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Device_Managament_App.Properties.Resources.icons8_workstation_80;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Device_Managament_App.Properties.Resources.icons8_mobile_device_64;
+            this.pictureBox1.Location = new System.Drawing.Point(43, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // connectionBindingSource1
             // 
             this.connectionBindingSource1.DataSource = typeof(Device_Management_App.Classes.Connection);
@@ -664,18 +678,12 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.sideMenuPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.sideMenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableDevices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).EndInit();
@@ -685,6 +693,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -741,5 +755,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ComboBox cmbxSearchBy;
         private System.Windows.Forms.Label lblSearching;
+        private System.Windows.Forms.Label lblUser;
     }
 }

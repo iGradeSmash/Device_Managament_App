@@ -20,17 +20,17 @@ namespace Device_Managament_App {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Device_Management_dbDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("RoleDbSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Device_Management_dbDataSet : global::System.Data.DataSet {
+    public partial class RoleDbSet : global::System.Data.DataSet {
         
-        private DevicesDataTable tableDevices;
+        private RoleDataTable tableRole;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Device_Management_dbDataSet() {
+        public RoleDbSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Device_Managament_App {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected Device_Management_dbDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected RoleDbSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Device_Managament_App {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Devices"] != null)) {
-                    base.Tables.Add(new DevicesDataTable(ds.Tables["Devices"]));
+                if ((ds.Tables["Role"] != null)) {
+                    base.Tables.Add(new RoleDataTable(ds.Tables["Role"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Device_Managament_App {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DevicesDataTable Devices {
+        public RoleDataTable Role {
             get {
-                return this.tableDevices;
+                return this.tableRole;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Device_Managament_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Device_Management_dbDataSet cln = ((Device_Management_dbDataSet)(base.Clone()));
+            RoleDbSet cln = ((RoleDbSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Device_Managament_App {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Devices"] != null)) {
-                    base.Tables.Add(new DevicesDataTable(ds.Tables["Devices"]));
+                if ((ds.Tables["Role"] != null)) {
+                    base.Tables.Add(new RoleDataTable(ds.Tables["Role"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Device_Managament_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDevices = ((DevicesDataTable)(base.Tables["Devices"]));
+            this.tableRole = ((RoleDataTable)(base.Tables["Role"]));
             if ((initTable == true)) {
-                if ((this.tableDevices != null)) {
-                    this.tableDevices.InitVars();
+                if ((this.tableRole != null)) {
+                    this.tableRole.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Device_Managament_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Device_Management_dbDataSet";
+            this.DataSetName = "RoleDbSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Device_Management_dbDataSet.xsd";
+            this.Namespace = "http://tempuri.org/RoleDbSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDevices = new DevicesDataTable();
-            base.Tables.Add(this.tableDevices);
+            this.tableRole = new RoleDataTable();
+            base.Tables.Add(this.tableRole);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeDevices() {
+        private bool ShouldSerializeRole() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Device_Managament_App {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Device_Management_dbDataSet ds = new Device_Management_dbDataSet();
+            RoleDbSet ds = new RoleDbSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,23 @@ namespace Device_Managament_App {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void DevicesRowChangeEventHandler(object sender, DevicesRowChangeEvent e);
+        public delegate void RoleRowChangeEventHandler(object sender, RoleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DevicesDataTable : global::System.Data.TypedTableBase<DevicesRow> {
+        public partial class RoleDataTable : global::System.Data.TypedTableBase<RoleRow> {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnDescription;
-            
-            private global::System.Data.DataColumn columnType;
-            
-            private global::System.Data.DataColumn columnBrand;
-            
-            private global::System.Data.DataColumn columnModel;
-            
-            private global::System.Data.DataColumn columnBarcode;
-            
-            private global::System.Data.DataColumn columnStatus;
+            private global::System.Data.DataColumn columnRoleName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesDataTable() {
-                this.TableName = "Devices";
+            public RoleDataTable() {
+                this.TableName = "Role";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +294,7 @@ namespace Device_Managament_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DevicesDataTable(global::System.Data.DataTable table) {
+            internal RoleDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,7 +311,7 @@ namespace Device_Managament_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected DevicesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected RoleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -336,49 +326,9 @@ namespace Device_Managament_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn RoleNameColumn {
                 get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
-                get {
-                    return this.columnType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn BrandColumn {
-                get {
-                    return this.columnBrand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ModelColumn {
-                get {
-                    return this.columnModel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn BarcodeColumn {
-                get {
-                    return this.columnBarcode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StatusColumn {
-                get {
-                    return this.columnStatus;
+                    return this.columnRoleName;
                 }
             }
             
@@ -393,58 +343,53 @@ namespace Device_Managament_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesRow this[int index] {
+            public RoleRow this[int index] {
                 get {
-                    return ((DevicesRow)(this.Rows[index]));
+                    return ((RoleRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DevicesRowChangeEventHandler DevicesRowChanging;
+            public event RoleRowChangeEventHandler RoleRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DevicesRowChangeEventHandler DevicesRowChanged;
+            public event RoleRowChangeEventHandler RoleRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DevicesRowChangeEventHandler DevicesRowDeleting;
+            public event RoleRowChangeEventHandler RoleRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event DevicesRowChangeEventHandler DevicesRowDeleted;
+            public event RoleRowChangeEventHandler RoleRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddDevicesRow(DevicesRow row) {
+            public void AddRoleRow(RoleRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesRow AddDevicesRow(string Description, string Type, string Brand, string Model, string Barcode, bool Status) {
-                DevicesRow rowDevicesRow = ((DevicesRow)(this.NewRow()));
+            public RoleRow AddRoleRow(string RoleName) {
+                RoleRow rowRoleRow = ((RoleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Description,
-                        Type,
-                        Brand,
-                        Model,
-                        Barcode,
-                        Status};
-                rowDevicesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDevicesRow);
-                return rowDevicesRow;
+                        RoleName};
+                rowRoleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRoleRow);
+                return rowRoleRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesRow FindById(int Id) {
-                return ((DevicesRow)(this.Rows.Find(new object[] {
+            public RoleRow FindById(int Id) {
+                return ((RoleRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DevicesDataTable cln = ((DevicesDataTable)(base.Clone()));
+                RoleDataTable cln = ((RoleDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,19 +397,14 @@ namespace Device_Managament_App {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DevicesDataTable();
+                return new RoleDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnDescription = base.Columns["Description"];
-                this.columnType = base.Columns["Type"];
-                this.columnBrand = base.Columns["Brand"];
-                this.columnModel = base.Columns["Model"];
-                this.columnBarcode = base.Columns["Barcode"];
-                this.columnStatus = base.Columns["Status"];
+                this.columnRoleName = base.Columns["RoleName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -472,18 +412,8 @@ namespace Device_Managament_App {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
-                this.columnBrand = new global::System.Data.DataColumn("Brand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrand);
-                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnModel);
-                this.columnBarcode = new global::System.Data.DataColumn("Barcode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBarcode);
-                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatus);
+                this.columnRoleName = new global::System.Data.DataColumn("RoleName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoleName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -492,37 +422,34 @@ namespace Device_Managament_App {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnDescription.MaxLength = 50;
-                this.columnType.MaxLength = 50;
-                this.columnBrand.MaxLength = 50;
-                this.columnModel.MaxLength = 50;
-                this.columnBarcode.MaxLength = 50;
+                this.columnRoleName.AllowDBNull = false;
+                this.columnRoleName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesRow NewDevicesRow() {
-                return ((DevicesRow)(this.NewRow()));
+            public RoleRow NewRoleRow() {
+                return ((RoleRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DevicesRow(builder);
+                return new RoleRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DevicesRow);
+                return typeof(RoleRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DevicesRowChanged != null)) {
-                    this.DevicesRowChanged(this, new DevicesRowChangeEvent(((DevicesRow)(e.Row)), e.Action));
+                if ((this.RoleRowChanged != null)) {
+                    this.RoleRowChanged(this, new RoleRowChangeEvent(((RoleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -530,8 +457,8 @@ namespace Device_Managament_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DevicesRowChanging != null)) {
-                    this.DevicesRowChanging(this, new DevicesRowChangeEvent(((DevicesRow)(e.Row)), e.Action));
+                if ((this.RoleRowChanging != null)) {
+                    this.RoleRowChanging(this, new RoleRowChangeEvent(((RoleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -539,8 +466,8 @@ namespace Device_Managament_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DevicesRowDeleted != null)) {
-                    this.DevicesRowDeleted(this, new DevicesRowChangeEvent(((DevicesRow)(e.Row)), e.Action));
+                if ((this.RoleRowDeleted != null)) {
+                    this.RoleRowDeleted(this, new RoleRowChangeEvent(((RoleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -548,14 +475,14 @@ namespace Device_Managament_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DevicesRowDeleting != null)) {
-                    this.DevicesRowDeleting(this, new DevicesRowChangeEvent(((DevicesRow)(e.Row)), e.Action));
+                if ((this.RoleRowDeleting != null)) {
+                    this.RoleRowDeleting(this, new RoleRowChangeEvent(((RoleRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveDevicesRow(DevicesRow row) {
+            public void RemoveRoleRow(RoleRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -564,7 +491,7 @@ namespace Device_Managament_App {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Device_Management_dbDataSet ds = new Device_Management_dbDataSet();
+                RoleDbSet ds = new RoleDbSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -582,7 +509,7 @@ namespace Device_Managament_App {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DevicesDataTable";
+                attribute2.FixedValue = "RoleDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -626,194 +553,37 @@ namespace Device_Managament_App {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DevicesRow : global::System.Data.DataRow {
+        public partial class RoleRow : global::System.Data.DataRow {
             
-            private DevicesDataTable tableDevices;
+            private RoleDataTable tableRole;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal DevicesRow(global::System.Data.DataRowBuilder rb) : 
+            internal RoleRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDevices = ((DevicesDataTable)(this.Table));
+                this.tableRole = ((RoleDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableDevices.IdColumn]));
+                    return ((int)(this[this.tableRole.IdColumn]));
                 }
                 set {
-                    this[this.tableDevices.IdColumn] = value;
+                    this[this.tableRole.IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Description {
+            public string RoleName {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevices.DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'Devices\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableRole.RoleNameColumn]));
                 }
                 set {
-                    this[this.tableDevices.DescriptionColumn] = value;
+                    this[this.tableRole.RoleNameColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Type {
-                get {
-                    try {
-                        return ((string)(this[this.tableDevices.TypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'Devices\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevices.TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Brand {
-                get {
-                    try {
-                        return ((string)(this[this.tableDevices.BrandColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Brand\' in table \'Devices\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevices.BrandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Model {
-                get {
-                    try {
-                        return ((string)(this[this.tableDevices.ModelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Model\' in table \'Devices\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevices.ModelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Barcode {
-                get {
-                    try {
-                        return ((string)(this[this.tableDevices.BarcodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Barcode\' in table \'Devices\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevices.BarcodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Status {
-                get {
-                    try {
-                        return ((bool)(this[this.tableDevices.StatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'Devices\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevices.StatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableDevices.DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableDevices.DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this.tableDevices.TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTypeNull() {
-                this[this.tableDevices.TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBrandNull() {
-                return this.IsNull(this.tableDevices.BrandColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBrandNull() {
-                this[this.tableDevices.BrandColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsModelNull() {
-                return this.IsNull(this.tableDevices.ModelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetModelNull() {
-                this[this.tableDevices.ModelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBarcodeNull() {
-                return this.IsNull(this.tableDevices.BarcodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBarcodeNull() {
-                this[this.tableDevices.BarcodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableDevices.StatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableDevices.StatusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -821,22 +591,22 @@ namespace Device_Managament_App {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class DevicesRowChangeEvent : global::System.EventArgs {
+        public class RoleRowChangeEvent : global::System.EventArgs {
             
-            private DevicesRow eventRow;
+            private RoleRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesRowChangeEvent(DevicesRow row, global::System.Data.DataRowAction action) {
+            public RoleRowChangeEvent(RoleRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DevicesRow Row {
+            public RoleRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -852,7 +622,7 @@ namespace Device_Managament_App {
         }
     }
 }
-namespace Device_Managament_App.Device_Management_dbDataSetTableAdapters {
+namespace Device_Managament_App.RoleDbSetTableAdapters {
     
     
     /// <summary>
@@ -864,7 +634,7 @@ namespace Device_Managament_App.Device_Management_dbDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DevicesTableAdapter : global::System.ComponentModel.Component {
+    public partial class RoleTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -878,7 +648,7 @@ namespace Device_Managament_App.Device_Management_dbDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DevicesTableAdapter() {
+        public RoleTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -975,67 +745,32 @@ namespace Device_Managament_App.Device_Management_dbDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Devices";
+            tableMapping.DataSetTable = "Role";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Description", "Description");
-            tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("Brand", "Brand");
-            tableMapping.ColumnMappings.Add("Model", "Model");
-            tableMapping.ColumnMappings.Add("Barcode", "Barcode");
-            tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("RoleName", "RoleName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Devices] WHERE (([Id] = @Original_Id) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_Brand = 1 AND [Brand] IS NULL) OR ([Brand] = @Original_Brand)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_Barcode = 1 AND [Barcode] IS NULL) OR ([Barcode] = @Original_Barcode)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Role] WHERE (([Id] = @Original_Id) AND ([RoleName] = @Original" +
+                "_RoleName))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Barcode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Devices] ([Description], [Type], [Brand], [Model], [Barcode], [Status]) VALUES (@Description, @Type, @Brand, @Model, @Barcode, @Status);
-SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Role] ([RoleName]) VALUES (@RoleName);\r\nSELECT Id, RoleName FR" +
+                "OM Role WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Devices] SET [Description] = @Description, [Type] = @Type, [Brand] = @Brand, [Model] = @Model, [Barcode] = @Barcode, [Status] = @Status WHERE (([Id] = @Original_Id) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_Brand = 1 AND [Brand] IS NULL) OR ([Brand] = @Original_Brand)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_Barcode = 1 AND [Barcode] IS NULL) OR ([Barcode] = @Original_Barcode)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)));
-SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Role] SET [RoleName] = @RoleName WHERE (([Id] = @Original_Id) AND (" +
+                "[RoleName] = @Original_RoleName));\r\nSELECT Id, RoleName FROM Role WHERE (Id = @I" +
+                "d)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Description", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Barcode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1049,23 +784,18 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM dbo.Devices";
+            this._commandCollection[0].CommandText = "SELECT Id, RoleName FROM dbo.Role";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM dbo.Devices\r\nWhe" +
-                "re status = 1";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Device_Management_dbDataSet.DevicesDataTable dataTable) {
+        public virtual int Fill(RoleDbSet.RoleDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1078,9 +808,9 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Device_Management_dbDataSet.DevicesDataTable GetData() {
+        public virtual RoleDbSet.RoleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Device_Management_dbDataSet.DevicesDataTable dataTable = new Device_Management_dbDataSet.DevicesDataTable();
+            RoleDbSet.RoleDataTable dataTable = new RoleDbSet.RoleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1088,28 +818,15 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(Device_Management_dbDataSet.DevicesDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Device_Management_dbDataSet.DevicesDataTable dataTable) {
+        public virtual int Update(RoleDbSet.RoleDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Device_Management_dbDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Devices");
+        public virtual int Update(RoleDbSet dataSet) {
+            return this.Adapter.Update(dataSet, "Role");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1131,55 +848,13 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Description, string Original_Type, string Original_Brand, string Original_Model, string Original_Barcode, global::System.Nullable<bool> Original_Status) {
+        public virtual int Delete(int Original_Id, string Original_RoleName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_Description == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((Original_RoleName == null)) {
+                throw new global::System.ArgumentNullException("Original_RoleName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Description));
-            }
-            if ((Original_Type == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Type));
-            }
-            if ((Original_Brand == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Brand));
-            }
-            if ((Original_Model == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Model));
-            }
-            if ((Original_Barcode == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Barcode));
-            }
-            if ((Original_Status.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Status.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_RoleName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1201,42 +876,12 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Description, string Type, string Brand, string Model, string Barcode, global::System.Nullable<bool> Status) {
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(string RoleName) {
+            if ((RoleName == null)) {
+                throw new global::System.ArgumentNullException("RoleName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Description));
-            }
-            if ((Type == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Type));
-            }
-            if ((Brand == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Brand));
-            }
-            if ((Model == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Model));
-            }
-            if ((Barcode == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Barcode));
-            }
-            if ((Status.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Status.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(RoleName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1258,93 +903,21 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Description, string Type, string Brand, string Model, string Barcode, global::System.Nullable<bool> Status, int Original_Id, string Original_Description, string Original_Type, string Original_Brand, string Original_Model, string Original_Barcode, global::System.Nullable<bool> Original_Status, int Id) {
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Update(string RoleName, int Original_Id, string Original_RoleName, int Id) {
+            if ((RoleName == null)) {
+                throw new global::System.ArgumentNullException("RoleName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Description));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(RoleName));
             }
-            if ((Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Type));
-            }
-            if ((Brand == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_Id));
+            if ((Original_RoleName == null)) {
+                throw new global::System.ArgumentNullException("Original_RoleName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Brand));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_RoleName));
             }
-            if ((Model == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Model));
-            }
-            if ((Barcode == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Barcode));
-            }
-            if ((Status.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Status.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id));
-            if ((Original_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Description));
-            }
-            if ((Original_Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Type));
-            }
-            if ((Original_Brand == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Brand));
-            }
-            if ((Original_Model == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Model));
-            }
-            if ((Original_Barcode == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Barcode));
-            }
-            if ((Original_Status.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(Original_Status.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1365,8 +938,8 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Description, string Type, string Brand, string Model, string Barcode, global::System.Nullable<bool> Status, int Original_Id, string Original_Description, string Original_Type, string Original_Brand, string Original_Model, string Original_Barcode, global::System.Nullable<bool> Original_Status) {
-            return this.Update(Description, Type, Brand, Model, Barcode, Status, Original_Id, Original_Description, Original_Type, Original_Brand, Original_Model, Original_Barcode, Original_Status, Original_Id);
+        public virtual int Update(string RoleName, int Original_Id, string Original_RoleName) {
+            return this.Update(RoleName, Original_Id, Original_RoleName, Original_Id);
         }
     }
     
@@ -1382,7 +955,7 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         
         private UpdateOrderOption _updateOrder;
         
-        private DevicesTableAdapter _devicesTableAdapter;
+        private RoleTableAdapter _roleTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1404,12 +977,12 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public DevicesTableAdapter DevicesTableAdapter {
+        public RoleTableAdapter RoleTableAdapter {
             get {
-                return this._devicesTableAdapter;
+                return this._roleTableAdapter;
             }
             set {
-                this._devicesTableAdapter = value;
+                this._roleTableAdapter = value;
             }
         }
         
@@ -1432,9 +1005,9 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._devicesTableAdapter != null) 
-                            && (this._devicesTableAdapter.Connection != null))) {
-                    return this._devicesTableAdapter.Connection;
+                if (((this._roleTableAdapter != null) 
+                            && (this._roleTableAdapter.Connection != null))) {
+                    return this._roleTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1449,7 +1022,7 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._devicesTableAdapter != null)) {
+                if ((this._roleTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1461,14 +1034,14 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(Device_Management_dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(RoleDbSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._devicesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Devices.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._roleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Role.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._devicesTableAdapter.Update(updatedRows));
+                    result = (result + this._roleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1480,13 +1053,13 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(Device_Management_dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(RoleDbSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._devicesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Devices.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._roleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Role.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._devicesTableAdapter.Update(addedRows));
+                    result = (result + this._roleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1498,13 +1071,13 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(Device_Management_dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(RoleDbSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._devicesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Devices.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._roleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Role.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._devicesTableAdapter.Update(deletedRows));
+                    result = (result + this._roleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1540,15 +1113,15 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(Device_Management_dbDataSet dataSet) {
+        public virtual int UpdateAll(RoleDbSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._devicesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._devicesTableAdapter.Connection) == false))) {
+            if (((this._roleTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._roleTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1584,13 +1157,13 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._devicesTableAdapter != null)) {
-                    revertConnections.Add(this._devicesTableAdapter, this._devicesTableAdapter.Connection);
-                    this._devicesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._devicesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._devicesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._devicesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._devicesTableAdapter.Adapter);
+                if ((this._roleTableAdapter != null)) {
+                    revertConnections.Add(this._roleTableAdapter, this._roleTableAdapter.Connection);
+                    this._roleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._roleTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._roleTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._roleTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._roleTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1651,9 +1224,9 @@ SELECT Id, Description, Type, Brand, Model, Barcode, Status FROM Devices WHERE (
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._devicesTableAdapter != null)) {
-                    this._devicesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._devicesTableAdapter]));
-                    this._devicesTableAdapter.Transaction = null;
+                if ((this._roleTableAdapter != null)) {
+                    this._roleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._roleTableAdapter]));
+                    this._roleTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Managament_App;
+using Device_Managament_App.Forms.UserForms;
 using Device_Managament_App.Utility;
 using Device_Management_App.Classes;
 
@@ -17,7 +18,6 @@ namespace Device_Management_App
             
             _tableName = "Devices";
       
-            MessageBox.Show(GlobalVariables.RoleId.ToString());
             InitializeComponent();
             conn = new Connection();
         }
@@ -28,17 +28,24 @@ namespace Device_Management_App
             this.deviceTypesTableAdapter.Fill(this.device_Management_dbDataSet1.DeviceTypes);
             // TODO: This line of code loads data into the 'device_Management_dbDataSet.Devices' table. You can move, or remove it, as needed.
             this.devicesTableAdapter.Fill(this.device_Management_dbDataSet.Devices);
-            if (GlobalVariables.RoleId == 2)
+            
+            if (UtilManager.Variables.RoleId == 1)
             {
                 btnReports.Enabled = true;
                 btnReports.Visible = true;
-                if (GlobalVariables.RoleId == 1)
-                {
-                    btnReports.Enabled = true;
-                    btnReports.Visible = true;
-                    btnUsers.Enabled = true;
-                    btnUsers.Visible = true;
-                }
+                btnUsers.Enabled = true;
+                btnUsers.Visible = true;
+                lblUser.Text = UtilManager.Variables.UserName.ToString()+", Administrator";
+            }
+            else if (UtilManager.Variables.RoleId == 2)
+            {
+                btnReports.Enabled = true;
+                btnReports.Visible = true;
+                lblUser.Text = UtilManager.Variables.UserName.ToString() + ", Technician";
+            }
+            else
+            {
+                lblUser.Text = UtilManager.Variables.UserName.ToString() + ", Teacher";
             }
 
         }
@@ -65,7 +72,7 @@ namespace Device_Management_App
         private void button1_Click(object sender, EventArgs e)
         {
             mainLabel.Text = "All Devices";
-            conn.GetAllData(dgvAvailableDevices, _tableName);
+            conn.GetAllData(dgvAvailableDevices);
 
         }
 
@@ -167,7 +174,7 @@ namespace Device_Management_App
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            conn.Search(txtSearch.Text,cmbxSearchBy.Text ,dgvAvailableDevices);
+            conn.Search(txtSearch.Text,cmbxSearchBy.Text,"Devices" ,dgvAvailableDevices);
             lblSearching.Text = cmbxSearchBy.Text;
         }
 
@@ -201,6 +208,30 @@ namespace Device_Management_App
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblLoginAs_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.devicesTableAdapter.FillBy(this.device_Management_dbDataSet.Devices);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            ModifyUserForm modyfyUsersForm = new ModifyUserForm();
+            modyfyUsersForm.ShowDialog();
         }
     }
 }

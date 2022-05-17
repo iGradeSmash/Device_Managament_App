@@ -91,5 +91,10 @@ namespace Device_Managament_App
         {
             DeviceForm.ActiveForm.Close();
         }
+
+        private void dgvDevices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

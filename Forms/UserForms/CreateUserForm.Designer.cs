@@ -211,8 +211,9 @@
             this.mtxtTelephone.Location = new System.Drawing.Point(10, 218);
             this.mtxtTelephone.Mask = "(000)-000-0000";
             this.mtxtTelephone.Name = "mtxtTelephone";
-            this.mtxtTelephone.Size = new System.Drawing.Size(138, 31);
+            this.mtxtTelephone.Size = new System.Drawing.Size(149, 31);
             this.mtxtTelephone.TabIndex = 9;
+            this.mtxtTelephone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtTelephone_MaskInputRejected);
             // 
             // label2
             // 
