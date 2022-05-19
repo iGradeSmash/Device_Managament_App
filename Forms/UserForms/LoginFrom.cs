@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,12 +14,12 @@ using System.Windows.Forms;
 
 namespace Device_Management_App
 {
-    public partial class deviceManagement : Form
+    public partial class LoginFrom : Form
     {
         Connection conn;
 
 
-        public deviceManagement()
+        public LoginFrom()
         {
            
             InitializeComponent();
@@ -148,6 +149,12 @@ namespace Device_Management_App
             this.Hide();
             createUserForm.ShowDialog();
             this.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string command = $"mailto:{linkLabel1.Text}?subject=Support Request";
+            Process.Start(command);
         }
     }
 }

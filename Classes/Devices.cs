@@ -5,6 +5,16 @@ namespace Device_Management_App.Classes
 {
     public partial class Devices
     {
+        private Devices _Devices;
+        public Devices()
+        {
+
+        }
+
+        public Devices( Devices devices){
+                _Devices = devices;
+            }
+
         public int Id { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }

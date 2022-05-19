@@ -94,7 +94,6 @@ namespace Device_Managament_App.Forms.UserForms
         {
             User user = new User();
             user.Email = txtEmail.Text;
-            user.Password = txtPassword.Text;
             user.Department = txtDepartment.Text;
             user.Telephone = mtbxPhone.Text;
             user.Address = txtAddress.Text;
@@ -124,12 +123,6 @@ namespace Device_Managament_App.Forms.UserForms
             {
                 MessageBox.Show("Please Enter Email!");
                 txtEmail.Focus();
-                return;
-            }
-            else if (txtPassword.Text == String.Empty)
-            {
-                MessageBox.Show("Please Enter Password!");
-                txtName.Focus();
                 return;
             }
             else if (txtDepartment.Text == String.Empty)
@@ -166,20 +159,23 @@ namespace Device_Managament_App.Forms.UserForms
             txtDepartment.Text = dgvUsers.Rows[e.RowIndex].Cells[6].Value.ToString();
             txtDescription.Text = dgvUsers.Rows[e.RowIndex].Cells[7].Value.ToString();
 
-            if ((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 1)
+
+            
+            if((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 1)
             {
-                dgvUsers.Rows[e.RowIndex].Cells[8].Value = "Administrator";
-            }
-            else if ((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 2)
+                txtbxCurrentRole.Text = "Administrator";
+            }else if((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 2)
             {
-                dgvUsers.Rows[e.RowIndex].Cells[8].Value = "Technician";
+                txtbxCurrentRole.Text = "Technician";
             }
             else if ((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 3)
             {
-                dgvUsers.Rows[e.RowIndex].Cells[8].Value = "Teacher";
+                txtbxCurrentRole.Text = "Teacher";
             }
-        }
 
+       
+            
+        }
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -187,7 +183,9 @@ namespace Device_Managament_App.Forms.UserForms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+        
             User user = new User();
+            user.Id = Id;
             user.Email = txtEmail.Text;
             user.Department = txtDepartment.Text;
             user.Telephone = mtbxPhone.Text;
@@ -195,8 +193,8 @@ namespace Device_Managament_App.Forms.UserForms
             user.Description = txtDescription.Text;
             user.RoleId = (int)cmbxRole.SelectedValue;
             user.Name = txtName.Text;
-            
-
+             
+        
             if (txtName.Text == String.Empty)
             {
                 MessageBox.Show("Please Enter Name!");
@@ -220,12 +218,10 @@ namespace Device_Managament_App.Forms.UserForms
                 MessageBox.Show("Please Enter Email!");
                 txtEmail.Focus();
                 return;
-            }
-            else if (txtPassword.Text != String.Empty)
+            }else if(txtEmail.Text == user.Email)
             {
-                user.Password = txtPassword.Text;
-            }
-            else if (txtDepartment.Text == String.Empty)
+                
+            }else if (txtDepartment.Text == String.Empty)
             {
                 MessageBox.Show("Please Enter Department!");
                 txtName.Focus();
@@ -243,11 +239,22 @@ namespace Device_Managament_App.Forms.UserForms
                 txtEmail.Focus();
                 return;
             }
-            else
-            {
                 con.UpdateUser(user);
                 con.GetAllUsers(dgvUsers);
-            }
+            
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            UtilManager.Variables.PasswordChangeId = Id;
+            ChangePasswordForm changePasswordForm = new ChangePasswordForm(true);
+            changePasswordForm.ShowDialog();
+
+        }
+
+        private void cmbxRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

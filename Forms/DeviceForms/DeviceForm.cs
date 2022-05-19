@@ -29,6 +29,8 @@ namespace Device_Managament_App
 
         private void DeviceForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'all_Devices_DataSet.Devices' table. You can move, or remove it, as needed.
+            this.devicesTableAdapter1.Fill(this.all_Devices_DataSet.Devices);
             // TODO: This line of code loads data into the 'device_Management_dbDataSet1.DeviceTypes' table. You can move, or remove it, as needed.
             this.deviceTypesTableAdapter.Fill(this.device_Management_dbDataSet1.DeviceTypes);
             // TODO: This line of code loads data into the 'device_Management_dbDataSet.Devices' table. You can move, or remove it, as needed.
@@ -45,6 +47,7 @@ namespace Device_Managament_App
             devices.Brand = txtBrand.Text;
             devices.Type = cmbxType.SelectedValue.ToString();
             devices.Status = chkbxStatus.Checked;
+            devices.IsAvailable = chbxIsFunctional.Checked;
 
             con.SaveDeviceData(devices);
             con.GetDeviceData(dgvDevices);
@@ -68,14 +71,15 @@ namespace Device_Managament_App
             txtModel.Text = dgvDevices.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtBarcode.Text = dgvDevices.Rows[e.RowIndex].Cells[5].Value.ToString();
             chkbxStatus.Checked = (bool)dgvDevices.Rows[e.RowIndex].Cells[6].Value;
-           
+            chbxIsFunctional.Checked = (bool)dgvDevices.Rows[e.RowIndex].Cells[7].Value; 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Devices devices = new Devices();
             devices.Id = Id;
-            devices.Status = chkbxStatus.Checked;
+            devices.Status = chbxIsFunctional.Checked;
+            devices.IsAvailable = chkbxStatus.Checked;
             devices.Description = txtDescription.Text;
             devices.Brand = txtBrand.Text;
             devices.Barcode = txtBarcode.Text;
@@ -95,6 +99,16 @@ namespace Device_Managament_App
         private void dgvDevices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void chbxIsFunctional_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDevices_DataMemberChanged(object sender, EventArgs e)
+        {
+            con.GetDeviceData(dgvDevices);
         }
     }
 }

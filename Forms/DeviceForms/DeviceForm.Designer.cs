@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeviceForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,13 +49,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDevices = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.devicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.device_Management_dbDataSet = new Device_Managament_App.Device_Management_dbDataSet();
             this.devicesTableAdapter = new Device_Managament_App.Device_Management_dbDataSetTableAdapters.DevicesTableAdapter();
@@ -67,6 +61,19 @@
             this.deviceTypesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.deviceTypesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chbxIsFunctional = new System.Windows.Forms.CheckBox();
+            this.devicesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.all_Devices_DataSet = new Device_Managament_App.All_Devices_DataSet();
+            this.devicesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.devicesTableAdapter1 = new Device_Managament_App.All_Devices_DataSetTableAdapters.DevicesTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IsAvailable = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevices)).BeginInit();
@@ -79,6 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource2)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.all_Devices_DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -282,8 +292,9 @@
             this.brandDataGridViewTextBoxColumn,
             this.modelDataGridViewTextBoxColumn,
             this.barcodeDataGridViewTextBoxColumn,
-            this.statusDataGridViewCheckBoxColumn});
-            this.dgvDevices.DataSource = this.devicesBindingSource;
+            this.statusDataGridViewCheckBoxColumn,
+            this.IsAvailable});
+            this.dgvDevices.DataSource = this.devicesBindingSource2;
             this.dgvDevices.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDevices.Location = new System.Drawing.Point(0, 0);
             this.dgvDevices.Name = "dgvDevices";
@@ -296,57 +307,9 @@
             this.dgvDevices.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDevices.Size = new System.Drawing.Size(800, 313);
             this.dgvDevices.TabIndex = 0;
+            this.dgvDevices.DataMemberChanged += new System.EventHandler(this.dgvDevices_DataMemberChanged);
             this.dgvDevices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDevices_CellContentClick);
             this.dgvDevices.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDevices_CellDoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // brandDataGridViewTextBoxColumn
-            // 
-            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
-            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
-            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
-            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // barcodeDataGridViewTextBoxColumn
-            // 
-            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "Barcode";
-            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
-            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
-            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewCheckBoxColumn
-            // 
-            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewCheckBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
-            this.statusDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // devicesBindingSource
             // 
@@ -424,11 +387,101 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
             // 
+            // chbxIsFunctional
+            // 
+            this.chbxIsFunctional.AutoSize = true;
+            this.chbxIsFunctional.Checked = true;
+            this.chbxIsFunctional.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbxIsFunctional.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbxIsFunctional.Location = new System.Drawing.Point(637, 102);
+            this.chbxIsFunctional.Name = "chbxIsFunctional";
+            this.chbxIsFunctional.Size = new System.Drawing.Size(103, 24);
+            this.chbxIsFunctional.TabIndex = 17;
+            this.chbxIsFunctional.Text = "Functional";
+            this.chbxIsFunctional.UseVisualStyleBackColor = true;
+            this.chbxIsFunctional.CheckedChanged += new System.EventHandler(this.chbxIsFunctional_CheckedChanged);
+            // 
+            // devicesBindingSource1
+            // 
+            this.devicesBindingSource1.DataMember = "Devices";
+            this.devicesBindingSource1.DataSource = this.device_Management_dbDataSet;
+            // 
+            // all_Devices_DataSet
+            // 
+            this.all_Devices_DataSet.DataSetName = "All_Devices_DataSet";
+            this.all_Devices_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // devicesBindingSource2
+            // 
+            this.devicesBindingSource2.DataMember = "Devices";
+            this.devicesBindingSource2.DataSource = this.all_Devices_DataSet;
+            // 
+            // devicesTableAdapter1
+            // 
+            this.devicesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // barcodeDataGridViewTextBoxColumn
+            // 
+            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "Barcode";
+            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
+            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
+            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewCheckBoxColumn
+            // 
+            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewCheckBoxColumn.HeaderText = "Active";
+            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
+            this.statusDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // IsAvailable
+            // 
+            this.IsAvailable.DataPropertyName = "IsAvailable";
+            this.IsAvailable.HeaderText = "Functional";
+            this.IsAvailable.Name = "IsAvailable";
+            this.IsAvailable.ReadOnly = true;
+            // 
             // DeviceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 698);
+            this.Controls.Add(this.chbxIsFunctional);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbxType);
             this.Controls.Add(this.panel2);
@@ -444,6 +497,7 @@
             this.Controls.Add(this.lblDeviceDescription);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeviceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeviceForm";
@@ -461,6 +515,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource2)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.all_Devices_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,13 +543,6 @@
         private Device_Management_dbDataSet device_Management_dbDataSet;
         private System.Windows.Forms.BindingSource devicesBindingSource;
         private Device_Management_dbDataSetTableAdapters.DevicesTableAdapter devicesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Label label5;
         private Device_Management_dbDataSet1 device_Management_dbDataSet1;
         private System.Windows.Forms.BindingSource deviceTypesBindingSource;
@@ -504,5 +554,18 @@
         private System.Windows.Forms.BindingSource deviceTypesBindingSource3;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chbxIsFunctional;
+        private System.Windows.Forms.BindingSource devicesBindingSource1;
+        private All_Devices_DataSet all_Devices_DataSet;
+        private System.Windows.Forms.BindingSource devicesBindingSource2;
+        private All_Devices_DataSetTableAdapters.DevicesTableAdapter devicesTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsAvailable;
     }
 }

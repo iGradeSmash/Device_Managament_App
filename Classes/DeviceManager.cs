@@ -18,6 +18,10 @@ namespace Device_Management_App.Classes
         public string Model { get; set; }
         public string Barcode { get; set; }
         public bool? Status { get; set; }
+        public string TransactionType { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public bool? IsApproved { get; set; }
+        public DateTime? DecisionDate { get; set; }
 
         public virtual User User { get; set; }
     }

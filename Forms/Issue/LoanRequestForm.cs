@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Device_Managament_App.Utility;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,32 @@ namespace Device_Managament_App.Forms.Issue
 
         private void newMDIChildView_Click(object sender, EventArgs e)
         {
-            Issues issue = new Issues();
-            issue.MdiParent = this;
-            issue.Show();
+            RequestForm request = new RequestForm();
+            request.MdiParent = this;
+            request.Show();
+        }
+
+        private void LoanRequestForm_Load(object sender, EventArgs e)
+        {
+            if(UtilManager.Variables.RoleId == 1 || UtilManager.Variables.RoleId == 2)
+            {
+                tsmReviewRequest.Enabled = true;
+                tsmReviewRequest.Visible = true;
+            }
+        }
+
+        private void newMDIViewHistory_Click(object sender, EventArgs e)
+        {
+            ViewHistoryForm viewHistoryForm = new ViewHistoryForm();
+            viewHistoryForm.MdiParent = this;
+            viewHistoryForm.Show();
+        }
+
+        private void tsmReviewRequest_Click(object sender, EventArgs e)
+        {
+            ApproveRequestForm approveRequestForm = new ApproveRequestForm();
+            approveRequestForm.MdiParent = this;
+            approveRequestForm.Show();
         }
     }
 }
