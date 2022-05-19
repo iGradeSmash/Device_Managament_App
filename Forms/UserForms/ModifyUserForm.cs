@@ -32,13 +32,14 @@ namespace Device_Managament_App.Forms.UserForms
             this.usersTableAdapter1.Fill(this.users._Users);
             // TODO: This line of code loads data into the 'device_Management_dbDataSet1.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.device_Management_dbDataSet1.Users);
-            
-            for(var i=0; i < dgvUsers.RowCount; i++)
+
+            for (var i = 0; i < dgvUsers.RowCount; i++)
             {
                 if ((int)dgvUsers.Rows[i].Cells[1].Value == 1)
                 {
                     dgvUsers.Rows[i].Cells[8].Value = "Administrator";
-                }else if ((int)dgvUsers.Rows[i].Cells[1].Value == 2)
+                }
+                else if ((int)dgvUsers.Rows[i].Cells[1].Value == 2)
                 {
                     dgvUsers.Rows[i].Cells[8].Value = "Technician";
                 }
@@ -81,12 +82,12 @@ namespace Device_Managament_App.Forms.UserForms
 
         private void dgvDevices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dgvUsers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
- 
+
         }
 
         private void btnDevicesSave_Click(object sender, EventArgs e)
@@ -164,6 +165,89 @@ namespace Device_Managament_App.Forms.UserForms
             txtEmail.Text = dgvUsers.Rows[e.RowIndex].Cells[5].Value.ToString();
             txtDepartment.Text = dgvUsers.Rows[e.RowIndex].Cells[6].Value.ToString();
             txtDescription.Text = dgvUsers.Rows[e.RowIndex].Cells[7].Value.ToString();
+
+            if ((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 1)
+            {
+                dgvUsers.Rows[e.RowIndex].Cells[8].Value = "Administrator";
+            }
+            else if ((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 2)
+            {
+                dgvUsers.Rows[e.RowIndex].Cells[8].Value = "Technician";
+            }
+            else if ((int)dgvUsers.Rows[e.RowIndex].Cells[1].Value == 3)
+            {
+                dgvUsers.Rows[e.RowIndex].Cells[8].Value = "Teacher";
+            }
+        }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.Email = txtEmail.Text;
+            user.Department = txtDepartment.Text;
+            user.Telephone = mtbxPhone.Text;
+            user.Address = txtAddress.Text;
+            user.Description = txtDescription.Text;
+            user.RoleId = (int)cmbxRole.SelectedValue;
+            user.Name = txtName.Text;
+            
+
+            if (txtName.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Name!");
+                txtName.Focus();
+                return;
+            }
+            else if (txtAddress.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Address!");
+                txtAddress.Focus();
+                return;
+            }
+            else if (mtbxPhone.MaskFull != true)
+            {
+                MessageBox.Show("Please Enter Telephone!");
+                mtbxPhone.Focus();
+                return;
+            }
+            else if (txtEmail.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Email!");
+                txtEmail.Focus();
+                return;
+            }
+            else if (txtPassword.Text != String.Empty)
+            {
+                user.Password = txtPassword.Text;
+            }
+            else if (txtDepartment.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Department!");
+                txtName.Focus();
+                return;
+            }
+            else if (txtDescription.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Description!");
+                txtName.Focus();
+                return;
+            }
+            else if (UtilManager.Validation.IsValidEmail(txtEmail.Text) != true)
+            {
+                MessageBox.Show("Invalid Email Address!");
+                txtEmail.Focus();
+                return;
+            }
+            else
+            {
+                con.UpdateUser(user);
+                con.GetAllUsers(dgvUsers);
+            }
         }
     }
 }

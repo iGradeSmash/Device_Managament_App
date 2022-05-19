@@ -17,7 +17,10 @@ namespace Device_Managament_App.Utility
             public const string TABLE_NAME_DEVICES = "[Devices]";
             public const string TABLE_NAME_USERS = "[Users]";
             public const string TABLE_NAME_DEVICE_MANAGER = "[Device_Manager]";
-           
+            public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT = "Exit?";
+            public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT_TITLE = "Device Management System";
+            public const string ERROR_MESSAGE_IS_EMAIL_VALID = "Invalid Email Address!";
+
         }
         public static class Variables
         {
@@ -44,13 +47,27 @@ namespace Device_Managament_App.Utility
                     bool isEmail = Regex.IsMatch(email.Trim(), @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
 
                     return isEmail;
-             
+
             }
         }
-        
+        public static class SystemMessages 
+        {
+            public static void WarningMessage(string title, string body)
+            {
+                DialogResult dialogResult = MessageBox.Show(body, title, MessageBoxButtons.YesNo);
 
-        
-       
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+
+
     }
-  
+
 }

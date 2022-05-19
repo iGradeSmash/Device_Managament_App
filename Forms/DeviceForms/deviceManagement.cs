@@ -75,17 +75,24 @@ namespace Device_Management_App
         private void button1_Click(object sender, EventArgs e)
         {
             
-            Form2 f2 = new Form2();
+            AvailableDevicesForm f2 = new AvailableDevicesForm();
 
 
             if (usernameTxtBx.Text == String.Empty)
             {
                 show_Message_Dialog("Please enter username", true);
+                usernameTxtBx.Focus();
+                return;
+            }else if (UtilManager.Validation.IsValidEmail(usernameTxtBx.Text)!=true){
+
+                show_Message_Dialog(UtilManager.Constants.ERROR_MESSAGE_IS_EMAIL_VALID, true);
+                usernameTxtBx.Focus();
                 return;
             }
-            if (passwordTxtBx.Text == String.Empty)
+            else if (passwordTxtBx.Text == String.Empty)
             {
                 show_Message_Dialog("Please enter password", true);
+                passwordTxtBx.Focus();
                 return;
             }
             

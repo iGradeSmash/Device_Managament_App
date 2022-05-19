@@ -2,21 +2,20 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Managament_App;
+using Device_Managament_App.Forms.Issue;
 using Device_Managament_App.Forms.UserForms;
 using Device_Managament_App.Utility;
 using Device_Management_App.Classes;
 
 namespace Device_Management_App
 {
-    public partial class Form2 : Form
+    public partial class AvailableDevicesForm : Form
     {
-        private string _tableName = "";
+     
         private Connection conn;
-        int Id;
-        public Form2()
+        
+        public AvailableDevicesForm()
         {
-            
-            _tableName = "Devices";
       
             InitializeComponent();
             conn = new Connection();
@@ -160,12 +159,8 @@ namespace Device_Management_App
             
             MessageBox.Show(devices.Description);
             conn.SaveDeviceData(devices);
-            saveData();
         }
-        public async Task saveData()
-        {
-       
-        }
+    
 
         private void tbView_Click(object sender, EventArgs e)
         {
@@ -185,7 +180,7 @@ namespace Device_Management_App
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            UtilManager.SystemMessages.WarningMessage(UtilManager.Constants.APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT_TITLE, UtilManager.Constants.APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT);
         }
 
         private void btnDevicesFrom_Click(object sender, EventArgs e)
@@ -207,7 +202,8 @@ namespace Device_Management_App
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            LoanRequestForm lrf = new LoanRequestForm();
+            lrf.ShowDialog();
         }
 
         private void lblLoginAs_Click(object sender, EventArgs e)
@@ -223,7 +219,7 @@ namespace Device_Management_App
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -232,6 +228,18 @@ namespace Device_Management_App
         {
             ModifyUserForm modyfyUsersForm = new ModifyUserForm();
             modyfyUsersForm.ShowDialog();
+        }
+
+        private void file_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            UtilManager.SystemMessages.WarningMessage(UtilManager.Constants.APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT_TITLE, UtilManager.Constants.APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT);
+           
         }
     }
 }

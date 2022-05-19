@@ -21,13 +21,12 @@ namespace Device_Management_App.Classes
         /* Device Data Queries*/
         public async Task GetAllData(DataGridView dataGridView)
         {
-            List<Devices> devices = new List<Devices>();
             DataTable dataTable = new DataTable();
             dataGridView = new DataGridView();
             try
             {
                 sqlConnection.Open();
-                sqlStatement = $"SELECT * FROM [Devices]";
+                sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES}";
                 command = new SqlCommand(sqlStatement, sqlConnection);
 
                 reader = command.ExecuteReader();
@@ -57,7 +56,7 @@ namespace Device_Management_App.Classes
             {
                 adapter = new SqlDataAdapter();
                 sqlConnection.Open();
-                sqlStatement = "INSERT INTO Devices([Description], [Type], [Brand], [Model],[Barcode],[Status])" +
+                sqlStatement = "INSERT INTO"+ UtilManager.Constants.TABLE_NAME_DEVICES+"([Description], [Type], [Brand], [Model],[Barcode],[Status])" +
                     $"VALUES('{devices.Description}','{devices.Type}','{devices.Brand}', '{devices.Model}', '{devices.Barcode}','{devices.Status}')";
 
                 command = new SqlCommand(sqlStatement, sqlConnection);
@@ -86,7 +85,7 @@ namespace Device_Management_App.Classes
             {
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter();
-                sqlStatement = $"UPDATE Devices SET [Description] = '{devices.Description}', [Type] = '{devices.Type}', [Brand] ='{devices.Brand}', [Model]='{devices.Model}', [Barcode] ='{devices.Barcode}', [Status] = '{devices.Status}'WHERE Id = '{devices.Id}'";
+                sqlStatement = $"UPDATE {UtilManager.Constants.TABLE_NAME_DEVICES} SET [Description] = '{devices.Description}', [Type] = '{devices.Type}', [Brand] ='{devices.Brand}', [Model]='{devices.Model}', [Barcode] ='{devices.Barcode}', [Status] = '{devices.Status}'WHERE Id = '{devices.Id}'";
 
                 command = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.UpdateCommand = new SqlCommand(sqlStatement, sqlConnection);
@@ -111,7 +110,7 @@ namespace Device_Management_App.Classes
         public void GetDeviceData(DataGridView dataGridView)
         {
 
-            sqlStatement = "SELECT * FROM [Devices]";
+            sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES}";
 
             try
             {
@@ -134,7 +133,7 @@ namespace Device_Management_App.Classes
         public void GetAvailableDeviceData(DataGridView dataGridView)
         {
 
-            sqlStatement = "SELECT * FROM [Devices] Where Status = 1";
+            sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES} Where Status = 1";
 
             try
             {
@@ -212,6 +211,32 @@ namespace Device_Management_App.Classes
                     adapter.InsertCommand.ExecuteNonQuery();
                 MessageBox.Show($"{user.Name} Created Successfully!");
             }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                command.Dispose();
+                adapter.Dispose();
+                sqlConnection.Dispose();
+                sqlConnection.Close();
+            }
+        }
+
+        public void UpdateUser(User user)
+        {
+            try
+            {
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter();
+                sqlStatement = $"UPDATE {UtilManager.Constants.TABLE_NAME_USERS}" +
+                    $"SET [RoleId] ='{user.RoleId}',[Name]='{user.Name}', [Address]='{user.Address}', [Telephone]='{user.Telephone}',[Email]='{user.Email}', [Department]='{user.Department}', [Description]='{user.Description}',[CreatedAt] =GETDATE(), [Password] = '{UtilManager.Validation.PasswordEncode(user.Password)}'";
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                adapter.UpdateCommand = command;
+                adapter.UpdateCommand.ExecuteNonQuery();
+                MessageBox.Show($"{user.Name} Updated Successfully!");
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

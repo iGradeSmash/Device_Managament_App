@@ -117,7 +117,7 @@ namespace Device_Managament_App
             }
             else if (UtilManager.Validation.IsValidEmail(txtEmail.Text)!=true)
             {
-                MessageBox.Show("Invalid Email Address!");
+                MessageBox.Show(UtilManager.Constants.ERROR_MESSAGE_IS_EMAIL_VALID);
                 txtEmail.Focus();
                 return;
             }
