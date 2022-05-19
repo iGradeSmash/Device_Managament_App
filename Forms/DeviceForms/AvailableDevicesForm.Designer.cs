@@ -34,17 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.sideMenuPanel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.sideMenuPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvailableDevicesForm));
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblSearching = new System.Windows.Forms.Label();
@@ -74,27 +64,31 @@
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnDevicesFrom = new System.Windows.Forms.Button();
             this.mainLabel = new System.Windows.Forms.Label();
+            this.Menu = new System.Windows.Forms.MenuStrip();
+            this.file = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePassordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sideMenuPanel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.sideMenuPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.deviceTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.device_Management_dbDataSet1 = new Device_Managament_App.Device_Management_dbDataSet1();
             this.deviceTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devicesTableAdapter = new Device_Managament_App.Device_Management_dbDataSetTableAdapters.DevicesTableAdapter();
             this.deviceTypesTableAdapter = new Device_Managament_App.Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter();
-            this.Menu = new System.Windows.Forms.MenuStrip();
-            this.file = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.connectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             mainPanel = new System.Windows.Forms.Panel();
-            this.sideMenuPanel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.sideMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             mainPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
@@ -103,147 +97,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            this.Menu.SuspendLayout();
+            this.sideMenuPanel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.sideMenuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).BeginInit();
-            this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // sideMenuPanel2
-            // 
-            this.sideMenuPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
-            this.sideMenuPanel2.Controls.Add(this.panel3);
-            this.sideMenuPanel2.Controls.Add(this.panel2);
-            this.sideMenuPanel2.Controls.Add(this.sideMenuPanel);
-            this.sideMenuPanel2.Controls.Add(this.pictureBox1);
-            this.sideMenuPanel2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.sideMenuPanel2.Location = new System.Drawing.Point(0, 0);
-            this.sideMenuPanel2.Name = "sideMenuPanel2";
-            this.sideMenuPanel2.Size = new System.Drawing.Size(171, 390);
-            this.sideMenuPanel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.AccessibleName = "sideMenuPanel";
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(66)))));
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(0, 244);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(171, 43);
-            this.panel3.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(29, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 35);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Reports";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Device_Managament_App.Properties.Resources.icons8_report_64;
-            this.pictureBox4.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.AccessibleName = "sideMenuPanel";
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(66)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(1, 173);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(171, 43);
-            this.panel2.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(29, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 35);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Users";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Device_Managament_App.Properties.Resources.icons8_select_users_80;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // sideMenuPanel
-            // 
-            this.sideMenuPanel.AccessibleName = "sideMenuPanel";
-            this.sideMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(66)))));
-            this.sideMenuPanel.Controls.Add(this.button1);
-            this.sideMenuPanel.Controls.Add(this.pictureBox2);
-            this.sideMenuPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sideMenuPanel.Location = new System.Drawing.Point(0, 104);
-            this.sideMenuPanel.Name = "sideMenuPanel";
-            this.sideMenuPanel.Size = new System.Drawing.Size(171, 43);
-            this.sideMenuPanel.TabIndex = 1;
-            this.sideMenuPanel.Click += new System.EventHandler(this.Form2_Load);
-            this.sideMenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sideMenuPanel_Paint);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(29, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 35);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Devices";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Device_Managament_App.Properties.Resources.icons8_workstation_80;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Device_Managament_App.Properties.Resources.icons8_mobile_device_64;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // mainPanel
             // 
@@ -439,6 +308,7 @@
             this.dgvAvailableDevices.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvAvailableDevices.Size = new System.Drawing.Size(1044, 356);
             this.dgvAvailableDevices.TabIndex = 0;
+            this.dgvAvailableDevices.DataMemberChanged += new System.EventHandler(this.dgvAvailableDevices_DataMemberChanged);
             this.dgvAvailableDevices.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvailableDevices_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
@@ -524,7 +394,7 @@
             this.btnLoanRequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoanRequests.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoanRequests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnLoanRequests.Location = new System.Drawing.Point(441, 10);
+            this.btnLoanRequests.Location = new System.Drawing.Point(268, 10);
             this.btnLoanRequests.Name = "btnLoanRequests";
             this.btnLoanRequests.Size = new System.Drawing.Size(150, 50);
             this.btnLoanRequests.TabIndex = 5;
@@ -564,7 +434,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(5, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 22);
             this.label1.TabIndex = 3;
@@ -580,7 +450,7 @@
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnReports.Location = new System.Drawing.Point(607, 10);
+            this.btnReports.Location = new System.Drawing.Point(612, 10);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(150, 50);
             this.btnReports.TabIndex = 2;
@@ -610,16 +480,18 @@
             // 
             this.btnDevicesFrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnDevicesFrom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDevicesFrom.Enabled = false;
             this.btnDevicesFrom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
             this.btnDevicesFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevicesFrom.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevicesFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnDevicesFrom.Location = new System.Drawing.Point(268, 10);
+            this.btnDevicesFrom.Location = new System.Drawing.Point(441, 10);
             this.btnDevicesFrom.Name = "btnDevicesFrom";
             this.btnDevicesFrom.Size = new System.Drawing.Size(150, 50);
             this.btnDevicesFrom.TabIndex = 0;
             this.btnDevicesFrom.Text = "Devices";
             this.btnDevicesFrom.UseVisualStyleBackColor = false;
+            this.btnDevicesFrom.Visible = false;
             this.btnDevicesFrom.Click += new System.EventHandler(this.btnDevicesFrom_Click);
             // 
             // mainLabel
@@ -632,6 +504,184 @@
             this.mainLabel.Size = new System.Drawing.Size(0, 24);
             this.mainLabel.TabIndex = 2;
             this.mainLabel.Click += new System.EventHandler(this.mainLabel_Click);
+            // 
+            // Menu
+            // 
+            this.Menu.BackColor = System.Drawing.SystemColors.Control;
+            this.Menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.file});
+            this.Menu.Location = new System.Drawing.Point(0, 0);
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(1068, 25);
+            this.Menu.TabIndex = 8;
+            this.Menu.Text = "Menu";
+            // 
+            // file
+            // 
+            this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.changePassordToolStripMenuItem,
+            this.closeToolStripMenuItem});
+            this.file.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.file.Name = "file";
+            this.file.Size = new System.Drawing.Size(40, 21);
+            this.file.Text = "File";
+            this.file.Click += new System.EventHandler(this.file_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.settingsToolStripMenuItem.Text = "Refresh";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.closeToolStripMenuItem.Text = "Exit";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // changePassordToolStripMenuItem
+            // 
+            this.changePassordToolStripMenuItem.Name = "changePassordToolStripMenuItem";
+            this.changePassordToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.changePassordToolStripMenuItem.Text = "Change Passord";
+            this.changePassordToolStripMenuItem.Click += new System.EventHandler(this.changePassordToolStripMenuItem_Click);
+            // 
+            // sideMenuPanel2
+            // 
+            this.sideMenuPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
+            this.sideMenuPanel2.Controls.Add(this.panel3);
+            this.sideMenuPanel2.Controls.Add(this.panel2);
+            this.sideMenuPanel2.Controls.Add(this.sideMenuPanel);
+            this.sideMenuPanel2.Controls.Add(this.pictureBox1);
+            this.sideMenuPanel2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.sideMenuPanel2.Location = new System.Drawing.Point(0, 0);
+            this.sideMenuPanel2.Name = "sideMenuPanel2";
+            this.sideMenuPanel2.Size = new System.Drawing.Size(171, 390);
+            this.sideMenuPanel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.AccessibleName = "sideMenuPanel";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(66)))));
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3.Location = new System.Drawing.Point(0, 244);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(171, 43);
+            this.panel3.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(29, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 35);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Reports";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Device_Managament_App.Properties.Resources.icons8_report_64;
+            this.pictureBox4.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.AccessibleName = "sideMenuPanel";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(66)))));
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Location = new System.Drawing.Point(1, 173);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(171, 43);
+            this.panel2.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(29, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 35);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Users";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Device_Managament_App.Properties.Resources.icons8_select_users_80;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // sideMenuPanel
+            // 
+            this.sideMenuPanel.AccessibleName = "sideMenuPanel";
+            this.sideMenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(66)))));
+            this.sideMenuPanel.Controls.Add(this.button1);
+            this.sideMenuPanel.Controls.Add(this.pictureBox2);
+            this.sideMenuPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideMenuPanel.Location = new System.Drawing.Point(0, 104);
+            this.sideMenuPanel.Name = "sideMenuPanel";
+            this.sideMenuPanel.Size = new System.Drawing.Size(171, 43);
+            this.sideMenuPanel.TabIndex = 1;
+            this.sideMenuPanel.Click += new System.EventHandler(this.Form2_Load);
+            this.sideMenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sideMenuPanel_Paint);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(29, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 35);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Devices";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Device_Managament_App.Properties.Resources.icons8_workstation_80;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Device_Managament_App.Properties.Resources.icons8_mobile_device_64;
+            this.pictureBox1.Location = new System.Drawing.Point(43, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // deviceTypesBindingSource
             // 
@@ -661,41 +711,6 @@
             // 
             this.deviceTypesTableAdapter.ClearBeforeFill = true;
             // 
-            // Menu
-            // 
-            this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
-            this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.file});
-            this.Menu.Location = new System.Drawing.Point(0, 0);
-            this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(1068, 25);
-            this.Menu.TabIndex = 8;
-            this.Menu.Text = "Menu";
-            // 
-            // file
-            // 
-            this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.file.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.file.Name = "file";
-            this.file.Size = new System.Drawing.Size(40, 21);
-            this.file.Text = "File";
-            this.file.Click += new System.EventHandler(this.file_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
-            // 
             // connectionBindingSource1
             // 
             this.connectionBindingSource1.DataSource = typeof(Device_Management_App.Classes.Connection);
@@ -714,18 +729,11 @@
             this.Controls.Add(mainPanel);
             this.Controls.Add(this.sideMenuPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AvailableDevicesForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Device Management";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.sideMenuPanel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.sideMenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -737,12 +745,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.Menu.ResumeLayout(false);
+            this.Menu.PerformLayout();
+            this.sideMenuPanel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.sideMenuPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceManagementdbDataSet1BindingSource)).EndInit();
-            this.Menu.ResumeLayout(false);
-            this.Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.connectionBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -803,5 +819,6 @@
         private System.Windows.Forms.ToolStripMenuItem file;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePassordToolStripMenuItem;
     }
 }

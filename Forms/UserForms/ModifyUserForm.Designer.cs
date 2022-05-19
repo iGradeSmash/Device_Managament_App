@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.devicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.device_Management_dbDataSet = new Device_Managament_App.Device_Management_dbDataSet();
             this.devicesTableAdapter = new Device_Managament_App.Device_Management_dbDataSetTableAdapters.DevicesTableAdapter();
             this.deviceTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.device_Management_dbDataSet1 = new Device_Managament_App.Device_Management_dbDataSet1();
             this.deviceTypesTableAdapter = new Device_Managament_App.Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter();
-            this.cmbxRole = new System.Windows.Forms.ComboBox();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roleDbSet = new Device_Managament_App.RoleDbSet();
             this.deviceTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deviceTypesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnDevicesSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,11 +62,9 @@
             this.usersDbSetMain = new Device_Managament_App.UsersDbSetMain();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.users = new Device_Managament_App.Users();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,6 +81,8 @@
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtbxCurrentRole = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.mtbxPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -91,6 +91,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usersTableAdapter2 = new Device_Managament_App.UsersDbSetMainTableAdapters.UsersTableAdapter();
+            this.cmbxRole = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource)).BeginInit();
@@ -144,21 +145,6 @@
             // 
             this.deviceTypesTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbxRole
-            // 
-            this.cmbxRole.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roleBindingSource, "RoleName", true));
-            this.cmbxRole.DataSource = this.roleBindingSource;
-            this.cmbxRole.DisplayMember = "RoleName";
-            this.cmbxRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbxRole.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            this.cmbxRole.FormattingEnabled = true;
-            this.cmbxRole.Location = new System.Drawing.Point(130, 253);
-            this.cmbxRole.Name = "cmbxRole";
-            this.cmbxRole.Size = new System.Drawing.Size(274, 25);
-            this.cmbxRole.TabIndex = 18;
-            this.cmbxRole.ValueMember = "Id";
-            // 
             // roleBindingSource
             // 
             this.roleBindingSource.DataMember = "Role";
@@ -186,6 +172,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnChangePassword);
             this.groupBox1.Controls.Add(this.btnDevicesSave);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,10 +180,26 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.groupBox1.Location = new System.Drawing.Point(498, 167);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(265, 161);
+            this.groupBox1.Size = new System.Drawing.Size(490, 161);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(178)))), ((int)(((byte)(120)))));
+            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnChangePassword.Location = new System.Drawing.Point(262, 30);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(228, 54);
+            this.btnChangePassword.TabIndex = 15;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnDevicesSave
             // 
@@ -245,14 +248,14 @@
             this.dgvUsers.AutoGenerateColumns = false;
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -270,19 +273,19 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvUsers.Size = new System.Drawing.Size(1000, 245);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
@@ -372,16 +375,6 @@
             this.users.DataSetName = "Users";
             this.users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(130, 209);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(274, 23);
-            this.txtPassword.TabIndex = 25;
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -415,20 +408,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.label4.Location = new System.Drawing.Point(6, 257);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 21);
+            this.label4.Size = new System.Drawing.Size(112, 21);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Role";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            this.label3.Location = new System.Drawing.Point(6, 211);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 21);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Password";
+            this.label4.Text = "Change Role";
             // 
             // txtEmail
             // 
@@ -567,17 +549,17 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cmbxRole);
+            this.groupBox3.Controls.Add(this.txtbxCurrentRole);
+            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.mtbxPhone);
             this.groupBox3.Controls.Add(this.txtAddress);
             this.groupBox3.Controls.Add(this.lblDeviceDescription);
             this.groupBox3.Controls.Add(this.txtName);
-            this.groupBox3.Controls.Add(this.cmbxRole);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.txtPassword);
             this.groupBox3.Controls.Add(this.txtEmail);
-            this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -589,6 +571,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Personal Info";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // txtbxCurrentRole
+            // 
+            this.txtbxCurrentRole.Enabled = false;
+            this.txtbxCurrentRole.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxCurrentRole.Location = new System.Drawing.Point(130, 204);
+            this.txtbxCurrentRole.Name = "txtbxCurrentRole";
+            this.txtbxCurrentRole.Size = new System.Drawing.Size(274, 23);
+            this.txtbxCurrentRole.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            this.label3.Location = new System.Drawing.Point(6, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 21);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Current Role";
             // 
             // label6
             // 
@@ -659,6 +661,19 @@
             // 
             this.usersTableAdapter2.ClearBeforeFill = true;
             // 
+            // cmbxRole
+            // 
+            this.cmbxRole.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roleBindingSource, "Id", true));
+            this.cmbxRole.DataSource = this.roleBindingSource;
+            this.cmbxRole.DisplayMember = "RoleName";
+            this.cmbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            this.cmbxRole.FormattingEnabled = true;
+            this.cmbxRole.Location = new System.Drawing.Point(130, 253);
+            this.cmbxRole.Name = "cmbxRole";
+            this.cmbxRole.Size = new System.Drawing.Size(274, 29);
+            this.cmbxRole.TabIndex = 35;
+            this.cmbxRole.ValueMember = "Id";
+            // 
             // ModifyUserForm
             // 
             this.AcceptButton = this.btnClose;
@@ -708,7 +723,6 @@
         private System.Windows.Forms.BindingSource deviceTypesBindingSource;
         private Device_Management_dbDataSet1 device_Management_dbDataSet1;
         private Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter deviceTypesTableAdapter;
-        private System.Windows.Forms.ComboBox cmbxRole;
         private System.Windows.Forms.BindingSource deviceTypesBindingSource1;
         private System.Windows.Forms.BindingSource deviceManagementdbDataSet1BindingSource;
         private System.Windows.Forms.BindingSource deviceTypesBindingSource3;
@@ -717,11 +731,9 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -761,5 +773,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Department;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.TextBox txtbxCurrentRole;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbxRole;
     }
 }

@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All_Devices_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>All_Devices_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\DeviceManager.cs" />
     <Compile Include="Classes\Devices.cs" />
@@ -56,6 +61,18 @@
     </Compile>
     <Compile Include="Forms\Issue\LoanRequestForm.Designer.cs">
       <DependentUpon>LoanRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Issue\ViewHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Issue\ViewHistoryForm.Designer.cs">
+      <DependentUpon>ViewHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserForms\CreateUserForm.cs">
       <SubType>Form</SubType>
@@ -69,11 +86,11 @@
     <Compile Include="Forms\DeviceForms\DeviceForm.Designer.cs">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DeviceForms\deviceManagement.cs">
+    <Compile Include="Forms\UserForms\LoginFrom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DeviceForms\deviceManagement.Designer.cs">
-      <DependentUpon>deviceManagement.cs</DependentUpon>
+    <Compile Include="Forms\UserForms\LoginFrom.Designer.cs">
+      <DependentUpon>LoginFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="Device_Management_dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,11 +114,11 @@
     <Compile Include="Forms\UserForms\ModifyUserForm.Designer.cs">
       <DependentUpon>ModifyUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Issue\Issues.cs">
+    <Compile Include="Forms\Issue\RequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Issue\Issues.Designer.cs">
-      <DependentUpon>Issues.cs</DependentUpon>
+    <Compile Include="Forms\Issue\RequestForm.Designer.cs">
+      <DependentUpon>RequestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,11 +138,14 @@
       <DependentUpon>UsersDbSetMain.xsd</DependentUpon>
     </Compile>
     <Compile Include="Utility\UtilManager.cs" />
-    <EmbeddedResource Include="Forms\Issue\Issues.resx">
-      <DependentUpon>Issues.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Issue\RequestForm.resx">
+      <DependentUpon>RequestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Issue\LoanRequestForm.resx">
       <DependentUpon>LoanRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForms\CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
@@ -133,8 +153,8 @@
     <EmbeddedResource Include="Forms\DeviceForms\DeviceForm.resx">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DeviceForms\deviceManagement.resx">
-      <DependentUpon>deviceManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UserForms\LoginFrom.resx">
+      <DependentUpon>LoginFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeviceForms\AvailableDevicesForm.resx">
       <DependentUpon>AvailableDevicesForm.cs</DependentUpon>
@@ -152,6 +172,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="All_Devices_DataSet.xsc">
+      <DependentUpon>All_Devices_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="All_Devices_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>All_Devices_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="All_Devices_DataSet.xss">
+      <DependentUpon>All_Devices_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Device_Management_dbDataSet.xsc">
       <DependentUpon>Device_Management_dbDataSet.xsd</DependentUpon>
     </None>

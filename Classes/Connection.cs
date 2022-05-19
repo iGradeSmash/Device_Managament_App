@@ -77,7 +77,6 @@ namespace Device_Management_App.Classes
             {
                 command.Dispose();
                 adapter.Dispose();
-                sqlConnection.Dispose();
                 sqlConnection.Close();
             }
         }
@@ -96,7 +95,7 @@ namespace Device_Management_App.Classes
                 adapter.UpdateCommand.ExecuteNonQuery();
 
                 MessageBox.Show($"Success - Device{devices.Description} Upated!");
-
+                
             }
             catch (Exception ex)
             {
@@ -106,7 +105,6 @@ namespace Device_Management_App.Classes
             {
                 command.Dispose();
                 adapter.Dispose();
-                sqlConnection.Dispose();
                 sqlConnection.Close();
             }
         }
@@ -125,12 +123,15 @@ namespace Device_Management_App.Classes
                 adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
                 adapter.Fill(dataTable);
                 dataGridView.DataSource = dataTable;
-                sqlConnection.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
             }
 
         }
@@ -139,7 +140,7 @@ namespace Device_Management_App.Classes
         public void GetAvailableDeviceData(DataGridView dataGridView)
         {
 
-            sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES} Where IsAvailable = 1";
+            sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES} WHERE [IsAvailable] = 1 AND [Status] = 1";
 
             try
             {
@@ -149,12 +150,16 @@ namespace Device_Management_App.Classes
                 adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
                 adapter.Fill(dataTable);
                 dataGridView.DataSource = dataTable;
-                sqlConnection.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                adapter.Dispose();
+                sqlConnection.Close();
             }
 
         }
@@ -174,12 +179,15 @@ namespace Device_Management_App.Classes
                 adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
                 adapter.Fill(dataTable);
                 dataGridView.DataSource = dataTable;
-                sqlConnection.Close();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
             }
         }
 
@@ -191,7 +199,7 @@ namespace Device_Management_App.Classes
         {
             try
             {
-              sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_USERS} WHERE Email='{email}' AND Password='{password}'";
+              sqlStatement = $"SELECT TOP(1)* FROM {UtilManager.Constants.TABLE_NAME_USERS} WHERE Email='{email}' AND Password='{password}'";
                 sqlConnection.Open();
                 command= new SqlCommand(sqlStatement, sqlConnection);
                 reader = command.ExecuteReader();
@@ -200,11 +208,17 @@ namespace Device_Management_App.Classes
                     UtilManager.Variables.UserID = reader.GetInt32(0);
                     UtilManager.Variables.RoleId = reader.GetInt32(1);
                     UtilManager.Variables.UserName = reader.GetString(2);
+                    UtilManager.Variables.Department = reader.GetString(6);
+                    UtilManager.Variables.Description = reader.GetString(7);
+
                 }
-                sqlConnection.Close();
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
             }
         }
 
@@ -218,7 +232,7 @@ namespace Device_Management_App.Classes
                 sqlStatement = $@"INSERT INTO {UtilManager.Constants.TABLE_NAME_USERS}([RoleId], [Name], [Address], [Telephone],[Email], [Department], [Description],[CreatedAt], [Password])" +
                     $@"VALUES('{user.RoleId}','{user.Name}','{user.Address}','{user.Telephone}','{user.Email}','{user.Department}','{user.Description}',GETDATE(),'{UtilManager.Validation.PasswordEncode(user.Password)}')";
                     command = new SqlCommand(sqlStatement, sqlConnection);
-                    adapter.InsertCommand = command;
+                    adapter.InsertCommand = new SqlCommand(sqlStatement,sqlConnection);
                     adapter.InsertCommand.ExecuteNonQuery();
                 MessageBox.Show($"{user.Name} Created Successfully!");
             }catch (Exception ex)
@@ -227,9 +241,6 @@ namespace Device_Management_App.Classes
             }
             finally
             {
-                command.Dispose();
-                adapter.Dispose();
-                sqlConnection.Dispose();
                 sqlConnection.Close();
             }
         }
@@ -241,11 +252,11 @@ namespace Device_Management_App.Classes
             {
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter();
-                sqlStatement = $"UPDATE {UtilManager.Constants.TABLE_NAME_USERS}" +
-                    $"SET [RoleId] ='{user.RoleId}',[Name]='{user.Name}', [Address]='{user.Address}', [Telephone]='{user.Telephone}',[Email]='{user.Email}', [Department]='{user.Department}', [Description]='{user.Description}',[CreatedAt] =GETDATE(), [Password] = '{UtilManager.Validation.PasswordEncode(user.Password)}'";
+                sqlStatement = "UPDATE " + UtilManager.Constants.TABLE_NAME_USERS + "SET [RoleId] ='" + user.RoleId + "', [Name]='" + user.Name + "', [Address]='" + user.Address + "', [Telephone]='" + user.Telephone + "', [Department]='" + user.Department + "', [Description]='" + user.Description + "' WHERE [Id] =" + user.Id;
                 command = new SqlCommand(sqlStatement, sqlConnection);
-                adapter.UpdateCommand = command;
+                adapter.UpdateCommand = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.UpdateCommand.ExecuteNonQuery();
+
                 MessageBox.Show($"{user.Name} Updated Successfully!");
             }
             catch (Exception ex)
@@ -254,13 +265,55 @@ namespace Device_Management_App.Classes
             }
             finally
             {
-                command.Dispose();
-                adapter.Dispose();
-                sqlConnection.Dispose();
+                            sqlConnection.Close();
+            }
+        }
+        //Updates user Password
+        public void UpdateUserPassword(string password, int id)
+        {
+            try
+            {
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter();
+                sqlStatement = $"UPDATE {UtilManager.Constants.TABLE_NAME_USERS} SET [password] = '{password}' WHERE [Id] = '{id}'";
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                adapter.UpdateCommand = new SqlCommand(sqlStatement, sqlConnection);
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                MessageBox.Show($"Updated Successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
                 sqlConnection.Close();
             }
         }
-
+        //Checks if user password is valid
+        public bool IsValidPassword(string password, int id)
+        {
+            bool isValid = false;
+            try
+            {
+                sqlStatement = $"SELECT TOP(1)* FROM {UtilManager.Constants.TABLE_NAME_USERS} WHERE [id]='{id}' AND Password='{password}'";
+                sqlConnection.Open();
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    isValid= true;
+                }
+                sqlConnection.Close();
+                return isValid;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         //Gets all users from the Database
         public void GetAllUsers(DataGridView dataGridView)
         {
@@ -283,5 +336,39 @@ namespace Device_Management_App.Classes
             }
         }
 
+        public  Devices PopulateRequest(int id)
+        {
+            Devices dev = new Devices();
+
+            try
+            {
+                sqlStatement = $"SELECT * FROM Devices WHERE [Id] = {id} and [Status]=1";
+                sqlConnection.Open();
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    dev.Id = reader.GetInt32(0);
+                    dev.Description = reader.GetString(1);
+                    dev.Type = reader.GetString(2);
+                    dev.Brand = reader.GetString(3);
+                    dev.Model = reader.GetString(4);
+                    dev.Barcode = reader.GetString(5);
+                    dev.Status = reader.GetBoolean(6);
+                    dev.IsAvailable = reader.GetBoolean(7);
+                    dev.BorrowerId=reader.GetInt32(8);
+                    dev.ExpectedReturnDate = reader.GetDateTime(9);
+                }
+                return  dev;
+            }catch(Exception ex)
+            {
+                MessageBox.Show (ex.Message);
+                return dev;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }
 }

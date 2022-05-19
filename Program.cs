@@ -1,4 +1,5 @@
-﻿using Device_Management_App;
+﻿using Device_Managament_App.Forms.UserForms;
+using Device_Management_App;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Device_Managament_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new deviceManagement());
+            Application.Run(new LoginFrom());
         }
     }
 }

@@ -19,9 +19,21 @@ namespace Device_Managament_App.Forms.Issue
 
         private void newMDIChildView_Click(object sender, EventArgs e)
         {
-            Issues issue = new Issues();
-            issue.MdiParent = this;
-            issue.Show();
+            RequestForm request = new RequestForm();
+            request.MdiParent = this;
+            request.Show();
+        }
+
+        private void LoanRequestForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newMDIViewHistory_Click(object sender, EventArgs e)
+        {
+            ViewHistoryForm viewHistoryForm = new ViewHistoryForm();
+            viewHistoryForm.MdiParent = this;
+            viewHistoryForm.Show();
         }
     }
 }

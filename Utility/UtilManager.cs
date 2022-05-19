@@ -18,7 +18,7 @@ namespace Device_Managament_App.Utility
             public const string TABLE_NAME_DEVICES = "[Devices]";
             public const string TABLE_NAME_USERS = "[Users]";
             public const string TABLE_NAME_DEVICE_MANAGER = "[Device_Manager]";
-            public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT = "Exit?";
+            public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT = "EXIT APPLICATION?";
             public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT_TITLE = "Device Management System";
             public const string ERROR_MESSAGE_IS_EMAIL_VALID = "Invalid Email Address!";
             
@@ -27,7 +27,10 @@ namespace Device_Managament_App.Utility
         {
             public static int UserID = 0;
             public static int RoleId = 0;
+            public static int PasswordChangeId = 0;
             public static string UserName = "";
+            public static string Department = "";
+            public static string Description = "";
         }
         public static class Validation
         {
@@ -35,11 +38,11 @@ namespace Device_Managament_App.Utility
             {
                 var plainBytes = Encoding.UTF8.GetBytes(plainText);
                 
-                return System.Convert.ToBase64String(plainBytes);
+                return Convert.ToBase64String(plainBytes);
             }
             public static string PasswordDecode(string encodedData)
             {
-                var encodedBytes = System.Convert.FromBase64String(encodedData);
+                var encodedBytes = Convert.FromBase64String(encodedData);
                 return Encoding.UTF8.GetString(encodedBytes);
             }
 

@@ -24,22 +24,27 @@ namespace Device_Management_App
         private void Form2_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'device_Management_dbDataSet1.DeviceTypes' table. You can move, or remove it, as needed.
-            this.deviceTypesTableAdapter.Fill(this.device_Management_dbDataSet1.DeviceTypes);
+            //this.deviceTypesTableAdapter.Fill(this.device_Management_dbDataSet1.DeviceTypes);
             // TODO: This line of code loads data into the 'device_Management_dbDataSet.Devices' table. You can move, or remove it, as needed.
-            this.devicesTableAdapter.Fill(this.device_Management_dbDataSet.Devices);
-            
+           // this.devicesTableAdapter.Fill(this.device_Management_dbDataSet.Devices);
+            conn.GetAvailableDeviceData(dgvAvailableDevices);
+
             if (UtilManager.Variables.RoleId == 1)
             {
                 btnReports.Enabled = true;
                 btnReports.Visible = true;
                 btnUsers.Enabled = true;
                 btnUsers.Visible = true;
+                btnDevicesFrom.Enabled = true;
+                btnDevicesFrom.Visible=true;
                 lblUser.Text = UtilManager.Variables.UserName.ToString()+", Administrator";
             }
             else if (UtilManager.Variables.RoleId == 2)
             {
                 btnReports.Enabled = true;
                 btnReports.Visible = true;
+                btnDevicesFrom.Enabled = true;
+                btnDevicesFrom.Visible = true;
                 lblUser.Text = UtilManager.Variables.UserName.ToString() + ", Technician";
             }
             else
@@ -61,7 +66,6 @@ namespace Device_Management_App
         {
 
         }
-
 
         private void sideMenuPanel_Paint(object sender, PaintEventArgs e)
         {
@@ -217,7 +221,7 @@ namespace Device_Management_App
             {
                 this.devicesTableAdapter.FillBy(this.device_Management_dbDataSet.Devices);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -240,6 +244,23 @@ namespace Device_Management_App
 
             UtilManager.SystemMessages.WarningMessage(UtilManager.Constants.APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT_TITLE, UtilManager.Constants.APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT);
            
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            conn.GetAvailableDeviceData(dgvAvailableDevices);
+        }
+
+        private void changePassordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UtilManager.Variables.PasswordChangeId = UtilManager.Variables.UserID;
+            ChangePasswordForm changePasswordForm = new ChangePasswordForm(false);
+            changePasswordForm.ShowDialog();
+        }
+
+        private void dgvAvailableDevices_DataMemberChanged(object sender, EventArgs e)
+        {
+            conn.GetAvailableDeviceData(dgvAvailableDevices);
         }
     }
 }

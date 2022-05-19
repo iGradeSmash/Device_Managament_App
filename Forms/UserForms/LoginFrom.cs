@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace Device_Management_App
 {
-    public partial class deviceManagement : Form
+    public partial class LoginFrom : Form
     {
         Connection conn;
 
 
-        public deviceManagement()
+        public LoginFrom()
         {
            
             InitializeComponent();

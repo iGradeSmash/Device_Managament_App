@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Device_Managament_App
+namespace Device_Managament_App.Forms.Issue
 {
-    public partial class Issues : Form
+    public partial class ViewHistoryForm : Form
     {
-        public Issues()
+        public ViewHistoryForm()
         {
             InitializeComponent();
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
