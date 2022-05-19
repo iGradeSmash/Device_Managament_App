@@ -12,5 +12,8 @@ namespace Device_Management_App.Classes
         public string Model { get; set; }
         public string Barcode { get; set; }
         public bool? Status { get; set; }
+        public bool? IsAvailable { get; set; }
+        public int? BorrowerId { get; set; }
+        public DateTime? ExpectedReturnDate { get; set; }
     }
 }

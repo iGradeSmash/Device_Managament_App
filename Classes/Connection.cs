@@ -18,8 +18,10 @@ namespace Device_Management_App.Classes
         string sqlStatement= "";
         private DataTable dataTable;
 
-        /* Device Data Queries*/
-        public async Task GetAllData(DataGridView dataGridView)
+        /***************Device Data Scripts*****************/
+        
+        //Gets all Devices from the Database
+        public void GetAllData(DataGridView dataGridView)
         {
             DataTable dataTable = new DataTable();
             dataGridView = new DataGridView();
@@ -49,15 +51,16 @@ namespace Device_Management_App.Classes
 
 
         }
-
+        
+        //Inserts a Device Into the Databse
         public void SaveDeviceData(Devices devices)
         {
             try
             {
                 adapter = new SqlDataAdapter();
                 sqlConnection.Open();
-                sqlStatement = "INSERT INTO"+ UtilManager.Constants.TABLE_NAME_DEVICES+"([Description], [Type], [Brand], [Model],[Barcode],[Status])" +
-                    $"VALUES('{devices.Description}','{devices.Type}','{devices.Brand}', '{devices.Model}', '{devices.Barcode}','{devices.Status}')";
+                sqlStatement = "INSERT INTO"+ UtilManager.Constants.TABLE_NAME_DEVICES+ "([Description], [Type], [Brand], [Model],[Barcode],[Status], [IsAvailable], [BorrowerId],[ExpectedReturnDate])" +
+                    $"VALUES('{devices.Description}','{devices.Type}','{devices.Brand}', '{devices.Model}', '{devices.Barcode}','{devices.Status}', '{devices.IsAvailable}','{devices.BorrowerId}','{devices.ExpectedReturnDate}')";
 
                 command = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.InsertCommand = new SqlCommand(sqlStatement, sqlConnection);
@@ -79,13 +82,14 @@ namespace Device_Management_App.Classes
             }
         }
 
+        //Updates a Device in the Database
         public void UpdateDeviceData(Devices devices)
         {
             try
             {
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter();
-                sqlStatement = $"UPDATE {UtilManager.Constants.TABLE_NAME_DEVICES} SET [Description] = '{devices.Description}', [Type] = '{devices.Type}', [Brand] ='{devices.Brand}', [Model]='{devices.Model}', [Barcode] ='{devices.Barcode}', [Status] = '{devices.Status}'WHERE Id = '{devices.Id}'";
+                sqlStatement = $"UPDATE {UtilManager.Constants.TABLE_NAME_DEVICES} SET [Description] = '{devices.Description}', [Type] = '{devices.Type}', [Brand] ='{devices.Brand}', [Model]='{devices.Model}', [Barcode] ='{devices.Barcode}', [Status] = '{devices.Status}', [IsAvailable] ='{devices.IsAvailable}', [BorrowerId] = '{devices.BorrowerId}', [ExpectedReturnDate] = '{devices.ExpectedReturnDate}' WHERE Id = '{devices.Id}'";
 
                 command = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.UpdateCommand = new SqlCommand(sqlStatement, sqlConnection);
@@ -107,6 +111,7 @@ namespace Device_Management_App.Classes
             }
         }
 
+        //Gets all Devices from the Database
         public void GetDeviceData(DataGridView dataGridView)
         {
 
@@ -130,10 +135,11 @@ namespace Device_Management_App.Classes
 
         }
 
+        //Gets all available Devices from the Database
         public void GetAvailableDeviceData(DataGridView dataGridView)
         {
 
-            sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES} Where Status = 1";
+            sqlStatement = $"SELECT * FROM {UtilManager.Constants.TABLE_NAME_DEVICES} Where IsAvailable = 1";
 
             try
             {
@@ -153,7 +159,9 @@ namespace Device_Management_App.Classes
 
         }
 
-        /*Active Search Query*/
+        /***************Active Search Script****************/
+
+        //Gets search results with the relevant Criteria from the Database
         public void Search(string txtBox, string option,string table ,DataGridView dataGridView)
         {
             sqlStatement = $"SELECT * FROM [{table}] WHERE [{option}] LIKE '%{txtBox}%'";
@@ -176,7 +184,9 @@ namespace Device_Management_App.Classes
         }
 
 
-        /*User Data Queries*/
+        /***************User Data Script*******************/
+
+        //Gets the Current user ID from the Database
         public void GetUserID(string email, string password)
         {
             try
@@ -198,6 +208,7 @@ namespace Device_Management_App.Classes
             }
         }
 
+        //Inserts a new user into the Database
         public void CreateUser(User user)
         {
             try
@@ -223,6 +234,7 @@ namespace Device_Management_App.Classes
             }
         }
 
+        //Updates a user in the Database
         public void UpdateUser(User user)
         {
             try
@@ -249,6 +261,7 @@ namespace Device_Management_App.Classes
             }
         }
 
+        //Gets all users from the Database
         public void GetAllUsers(DataGridView dataGridView)
         {
             try

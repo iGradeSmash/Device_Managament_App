@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Device_Management_App.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -20,7 +21,7 @@ namespace Device_Managament_App.Utility
             public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT = "Exit?";
             public const string APPLICATION_CLOSE_WARNING_MESSAGE_CONFIRM_EXIT_TITLE = "Device Management System";
             public const string ERROR_MESSAGE_IS_EMAIL_VALID = "Invalid Email Address!";
-
+            
         }
         public static class Variables
         {
@@ -33,6 +34,7 @@ namespace Device_Managament_App.Utility
             public static string PasswordEncode(string plainText)
             {
                 var plainBytes = Encoding.UTF8.GetBytes(plainText);
+                
                 return System.Convert.ToBase64String(plainBytes);
             }
             public static string PasswordDecode(string encodedData)
