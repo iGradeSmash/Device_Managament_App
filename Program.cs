@@ -19,7 +19,7 @@ namespace Device_Managament_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainReportForm());
+            Application.Run(new LoginFrom());
         }
     }
 }
