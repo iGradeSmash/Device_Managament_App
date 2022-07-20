@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Managament_App.Utility;
+using Microsoft.Reporting.WinForms;
 
 namespace Device_Management_App.Classes
 {
@@ -431,6 +432,27 @@ namespace Device_Management_App.Classes
                 adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
                 adapter.Fill(dataTable);
                 dgvHistory.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+        public void LoadReportHistory(DataGridView dgv, int deviceId)
+        {
+            
+            dataTable = new DataTable();
+            sqlStatement = $"SELECT * FROM [Device_Manager] WHERE [Device_Id] = '{deviceId}' ";
+            try
+            {
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dgv.DataSource = dataTable;
             }
             catch (Exception ex)
             {

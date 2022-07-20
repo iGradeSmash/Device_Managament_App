@@ -76,6 +76,7 @@ namespace Device_Managament_App.Forms.Issue
                 {
                     connection.UpdateDeviceManagerRequest(deviceManager.Id, false, deviceManager.UserId,deviceManager.DeviceId, deviceManager.TransactionType, true, UtilManager.Variables.UserID);
                     connection.LoadHistory(dgvApproveRequest);
+                    ClearData();
                 }
                 else
                 {
@@ -110,6 +111,7 @@ namespace Device_Managament_App.Forms.Issue
                 {
                     connection.UpdateDeviceManagerRequest(deviceManager.Id, true, deviceManager.UserId, deviceManager.DeviceId, deviceManager.TransactionType, false, UtilManager.Variables.UserID);
                     connection.LoadHistory(dgvApproveRequest);
+                    ClearData();
                 }
                 else
                 {
@@ -125,6 +127,17 @@ namespace Device_Managament_App.Forms.Issue
                 return true;
             }
             return false;
+        }
+        public void ClearData()
+        {
+            txtbxBarcode.Text = "";
+            txtbxBrand.Text = "";
+            txtbxDate.Text = "";
+            txtbxDepartment.Text = "";
+            txtbxDescription.Text = "";
+            txtbxModel.Text = "";
+            txtbxName.Text = "";
+            txtbxType.Text = "";
         }
 
        

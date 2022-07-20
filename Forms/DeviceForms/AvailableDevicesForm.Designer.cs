@@ -151,20 +151,20 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Miriam Mono CLM", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
             this.lblUser.Location = new System.Drawing.Point(17, 469);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(0, 21);
+            this.lblUser.Size = new System.Drawing.Size(0, 24);
             this.lblUser.TabIndex = 9;
             // 
             // lblSearching
             // 
             this.lblSearching.AutoSize = true;
-            this.lblSearching.Font = new System.Drawing.Font("Miriam Mono CLM", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblSearching.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.lblSearching.Location = new System.Drawing.Point(438, 476);
             this.lblSearching.Name = "lblSearching";
-            this.lblSearching.Size = new System.Drawing.Size(0, 17);
+            this.lblSearching.Size = new System.Drawing.Size(0, 18);
             this.lblSearching.TabIndex = 8;
             // 
             // cmbxSearchBy
@@ -397,7 +397,7 @@
             this.btnLoanRequests.Location = new System.Drawing.Point(268, 10);
             this.btnLoanRequests.Name = "btnLoanRequests";
             this.btnLoanRequests.Size = new System.Drawing.Size(150, 50);
-            this.btnLoanRequests.TabIndex = 5;
+            this.btnLoanRequests.TabIndex = 0;
             this.btnLoanRequests.Text = "Loan Request";
             this.btnLoanRequests.UseVisualStyleBackColor = false;
             this.btnLoanRequests.Click += new System.EventHandler(this.button5_Click);
@@ -470,7 +470,7 @@
             this.btnUsers.Location = new System.Drawing.Point(788, 10);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(150, 50);
-            this.btnUsers.TabIndex = 1;
+            this.btnUsers.TabIndex = 3;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Visible = false;
@@ -488,7 +488,7 @@
             this.btnDevicesFrom.Location = new System.Drawing.Point(441, 10);
             this.btnDevicesFrom.Name = "btnDevicesFrom";
             this.btnDevicesFrom.Size = new System.Drawing.Size(150, 50);
-            this.btnDevicesFrom.TabIndex = 0;
+            this.btnDevicesFrom.TabIndex = 1;
             this.btnDevicesFrom.Text = "Devices";
             this.btnDevicesFrom.UseVisualStyleBackColor = false;
             this.btnDevicesFrom.Visible = false;
@@ -507,7 +507,7 @@
             // 
             // Menu
             // 
-            this.Menu.BackColor = System.Drawing.SystemColors.Control;
+            this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
             this.Menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.file});
@@ -524,6 +524,7 @@
             this.changePassordToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.file.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.file.ForeColor = System.Drawing.Color.White;
             this.file.Name = "file";
             this.file.Size = new System.Drawing.Size(40, 21);
             this.file.Text = "File";
@@ -724,14 +725,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1068, 599);
             this.Controls.Add(mainPanel);
             this.Controls.Add(this.sideMenuPanel2);
+            this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.Menu;
             this.Name = "AvailableDevicesForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Device Management";
             this.Load += new System.EventHandler(this.Form2_Load);
             mainPanel.ResumeLayout(false);
