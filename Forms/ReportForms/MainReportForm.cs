@@ -53,5 +53,27 @@ namespace Device_Managament_App.Forms.ReportForms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void closeDialog_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+               this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

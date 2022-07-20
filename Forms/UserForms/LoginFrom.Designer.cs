@@ -30,6 +30,9 @@ namespace Device_Management_App
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,9 +56,6 @@ namespace Device_Management_App
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,6 +82,42 @@ namespace Device_Management_App
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 492);
             this.panel1.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(80, 435);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(174, 16);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Lenice Brissett - ID#: 2017002523";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(87, 415);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(166, 16);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Nicola Gray - ID#: 2017001543";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(70, 395);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(185, 16);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Randale Brown - ID#: 1917008422";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label5
             // 
@@ -282,12 +318,12 @@ namespace Device_Management_App
             this.passwordTxtBx.AccessibleName = "passwordTxtBx";
             this.passwordTxtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(247)))));
             this.passwordTxtBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.passwordTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxtBx.ForeColor = System.Drawing.Color.White;
-            this.passwordTxtBx.Location = new System.Drawing.Point(41, 11);
+            this.passwordTxtBx.Location = new System.Drawing.Point(41, 9);
             this.passwordTxtBx.Name = "passwordTxtBx";
             this.passwordTxtBx.PasswordChar = '*';
-            this.passwordTxtBx.Size = new System.Drawing.Size(317, 22);
+            this.passwordTxtBx.Size = new System.Drawing.Size(317, 24);
             this.passwordTxtBx.TabIndex = 8;
             this.passwordTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passwordTxtBx.UseSystemPasswordChar = true;
@@ -318,11 +354,11 @@ namespace Device_Management_App
             this.usernameTxtBx.AccessibleName = "usernameTxtBx";
             this.usernameTxtBx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(247)))));
             this.usernameTxtBx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.usernameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxtBx.ForeColor = System.Drawing.Color.White;
-            this.usernameTxtBx.Location = new System.Drawing.Point(40, 10);
+            this.usernameTxtBx.Location = new System.Drawing.Point(40, 9);
             this.usernameTxtBx.Name = "usernameTxtBx";
-            this.usernameTxtBx.Size = new System.Drawing.Size(317, 22);
+            this.usernameTxtBx.Size = new System.Drawing.Size(317, 24);
             this.usernameTxtBx.TabIndex = 7;
             this.usernameTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.usernameTxtBx.TextChanged += new System.EventHandler(this.usernameTxtBx_TextChanged);
@@ -363,42 +399,6 @@ namespace Device_Management_App
             this.closeBtn.Text = "X";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(70, 395);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(185, 16);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Randale Brown - ID#: 1917008422";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(87, 415);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(166, 16);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Nicola Gray - ID#: 2017001543";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(80, 435);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(174, 16);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Lenice Brissett - ID#: 2017002523";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // LoginFrom
             // 
