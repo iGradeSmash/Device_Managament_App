@@ -34,11 +34,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDevices = new System.Windows.Forms.Label();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
-            this.device_Management_dbDataSet2 = new Device_Managament_App.Device_Management_dbDataSet2();
-            this.transactionHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transactionHistoryTableAdapter = new Device_Managament_App.Device_Management_dbDataSet2TableAdapters.TransactionHistoryTableAdapter();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnExport = new System.Windows.Forms.Button();
             this.HistoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +49,16 @@
             this.approverRoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transactionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.device_Management_dbDataSet2 = new Device_Managament_App.Device_Management_dbDataSet2();
+            this.transactionHistoryTableAdapter = new Device_Managament_App.Device_Management_dbDataSet2TableAdapters.TransactionHistoryTableAdapter();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionHistoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet2)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,52 +120,12 @@
             this.transactionTypeDataGridViewTextBoxColumn,
             this.transactionDateDataGridViewTextBoxColumn});
             this.dgvTransactions.DataSource = this.transactionHistoryBindingSource;
-            this.dgvTransactions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvTransactions.Location = new System.Drawing.Point(0, 0);
+            this.dgvTransactions.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTransactions.Location = new System.Drawing.Point(0, 84);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.Size = new System.Drawing.Size(1284, 377);
             this.dgvTransactions.TabIndex = 2;
-            // 
-            // device_Management_dbDataSet2
-            // 
-            this.device_Management_dbDataSet2.DataSetName = "Device_Management_dbDataSet2";
-            this.device_Management_dbDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // transactionHistoryBindingSource
-            // 
-            this.transactionHistoryBindingSource.DataMember = "TransactionHistory";
-            this.transactionHistoryBindingSource.DataSource = this.device_Management_dbDataSet2;
-            // 
-            // transactionHistoryTableAdapter
-            // 
-            this.transactionHistoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnExport);
-            this.panel3.Controls.Add(this.dgvTransactions);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(200, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1284, 461);
-            this.panel3.TabIndex = 3;
-            // 
-            // btnExport
-            // 
-            this.btnExport.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(6, 383);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(150, 60);
-            this.btnExport.TabIndex = 3;
-            this.btnExport.Text = "Export To Excel";
-            this.btnExport.UseVisualStyleBackColor = false;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // HistoryId
             // 
@@ -272,6 +232,46 @@
             this.transactionDateDataGridViewTextBoxColumn.Name = "transactionDateDataGridViewTextBoxColumn";
             this.transactionDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // transactionHistoryBindingSource
+            // 
+            this.transactionHistoryBindingSource.DataMember = "TransactionHistory";
+            this.transactionHistoryBindingSource.DataSource = this.device_Management_dbDataSet2;
+            // 
+            // device_Management_dbDataSet2
+            // 
+            this.device_Management_dbDataSet2.DataSetName = "Device_Management_dbDataSet2";
+            this.device_Management_dbDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // transactionHistoryTableAdapter
+            // 
+            this.transactionHistoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnExport);
+            this.panel3.Controls.Add(this.dgvTransactions);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(200, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1284, 461);
+            this.panel3.TabIndex = 3;
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Location = new System.Drawing.Point(6, 9);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(150, 60);
+            this.btnExport.TabIndex = 3;
+            this.btnExport.Text = "Export To Excel";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // MainReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,8 +289,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionHistoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 

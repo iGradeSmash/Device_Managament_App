@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Device_Managament_App;
 using Device_Managament_App.Forms.Issue;
+using Device_Managament_App.Forms.ReportForms;
 using Device_Managament_App.Forms.UserForms;
 using Device_Managament_App.Utility;
 using Device_Management_App.Classes;
@@ -261,6 +262,12 @@ namespace Device_Management_App
         private void dgvAvailableDevices_DataMemberChanged(object sender, EventArgs e)
         {
             conn.GetAvailableDeviceData(dgvAvailableDevices);
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            MainReportForm reportForm = new MainReportForm();
+            reportForm.ShowDialog();
         }
     }
 }
