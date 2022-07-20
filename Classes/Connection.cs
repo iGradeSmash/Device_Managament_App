@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Device_Managament_App.Classes;
 using Device_Managament_App.Utility;
 using Microsoft.Reporting.WinForms;
 
@@ -16,11 +17,11 @@ namespace Device_Management_App.Classes
         private SqlDataReader reader;
         private SqlDataAdapter adapter;
         private SqlConnection sqlConnection = new SqlConnection(UtilManager.Constants.DATABASE_CONNECTION);
-        string sqlStatement= "";
+        string sqlStatement = "";
         private DataTable dataTable;
 
         /***************Device Data Scripts*****************/
-        
+
         //Gets all Devices from the Database
         public void GetAllData(DataGridView dataGridView)
         {
@@ -52,7 +53,7 @@ namespace Device_Management_App.Classes
 
 
         }
-        
+
         //Inserts a Device Into the Databse
         public void SaveDeviceData(Devices devices)
         {
@@ -60,7 +61,7 @@ namespace Device_Management_App.Classes
             {
                 adapter = new SqlDataAdapter();
                 sqlConnection.Open();
-                sqlStatement = "INSERT INTO"+ UtilManager.Constants.TABLE_NAME_DEVICES+ "([Description], [Type], [Brand], [Model],[Barcode],[Status], [IsAvailable], [BorrowerId],[ExpectedReturnDate])" +
+                sqlStatement = "INSERT INTO" + UtilManager.Constants.TABLE_NAME_DEVICES + "([Description], [Type], [Brand], [Model],[Barcode],[Status], [IsAvailable], [BorrowerId],[ExpectedReturnDate])" +
                     $"VALUES('{devices.Description}','{devices.Type}','{devices.Brand}', '{devices.Model}', '{devices.Barcode}','{devices.Status}', '{devices.IsAvailable}','{devices.BorrowerId}','{devices.ExpectedReturnDate}')";
 
                 command = new SqlCommand(sqlStatement, sqlConnection);
@@ -96,7 +97,7 @@ namespace Device_Management_App.Classes
                 adapter.UpdateCommand.ExecuteNonQuery();
 
                 MessageBox.Show($"Success - Device{devices.Description} Upated!");
-                
+
             }
             catch (Exception ex)
             {
@@ -168,7 +169,7 @@ namespace Device_Management_App.Classes
         /***************Active Search Script****************/
 
         //Gets search results with the relevant Criteria from the Database
-        public void Search(string txtBox, string option,string table ,DataGridView dataGridView)
+        public void Search(string txtBox, string option, string table, DataGridView dataGridView)
         {
             sqlStatement = $"SELECT * FROM [{table}] WHERE [{option}] LIKE '%{txtBox}%'";
 
@@ -200,9 +201,9 @@ namespace Device_Management_App.Classes
         {
             try
             {
-              sqlStatement = $"SELECT TOP(1)* FROM {UtilManager.Constants.TABLE_NAME_USERS} WHERE Email='{email}' AND Password='{password}'";
+                sqlStatement = $"SELECT TOP(1)* FROM {UtilManager.Constants.TABLE_NAME_USERS} WHERE Email='{email}' AND Password='{password}'";
                 sqlConnection.Open();
-                command= new SqlCommand(sqlStatement, sqlConnection);
+                command = new SqlCommand(sqlStatement, sqlConnection);
                 reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -213,7 +214,8 @@ namespace Device_Management_App.Classes
                     UtilManager.Variables.Description = reader.GetString(7);
 
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -226,17 +228,29 @@ namespace Device_Management_App.Classes
         //Inserts a new user into the Database
         public void CreateUser(User user)
         {
+
             try
             {
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter();
-                sqlStatement = $@"INSERT INTO {UtilManager.Constants.TABLE_NAME_USERS}([RoleId], [Name], [Address], [Telephone],[Email], [Department], [Description],[CreatedAt], [Password])" +
-                    $@"VALUES('{user.RoleId}','{user.Name}','{user.Address}','{user.Telephone}','{user.Email}','{user.Department}','{user.Description}',GETDATE(),'{UtilManager.Validation.PasswordEncode(user.Password)}')";
-                    command = new SqlCommand(sqlStatement, sqlConnection);
-                    adapter.InsertCommand = new SqlCommand(sqlStatement,sqlConnection);
-                    adapter.InsertCommand.ExecuteNonQuery();
+                sqlStatement = $"INSERT INTO {UtilManager.Constants.TABLE_NAME_USERS}([RoleId], [Name], [Address], [Telephone],[Email], [Department], [Description],[CreatedAt], [Password])" +
+                    "VALUES(@RoleID,@Name,@Address,@Telephone,@Email,@Department,@Description,GETDATE(),@Password)";
+
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                command.Parameters.AddWithValue("@RoleID", user.RoleId);
+                command.Parameters.AddWithValue("@Name", user.Name);
+                command.Parameters.AddWithValue("@Address", user.Address);
+                command.Parameters.AddWithValue("@Telephone", user.Telephone);
+                command.Parameters.AddWithValue("@Email", user.Email);
+                command.Parameters.AddWithValue("@Department", user.Department);
+                command.Parameters.AddWithValue("@Description", user.Description);
+                command.Parameters.AddWithValue("@Password", user.Password);
+
+                adapter.InsertCommand = command;
+                adapter.InsertCommand.ExecuteNonQuery();
                 MessageBox.Show($"{user.Name} Created Successfully!");
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -266,10 +280,10 @@ namespace Device_Management_App.Classes
             }
             finally
             {
-                            sqlConnection.Close();
+                sqlConnection.Close();
             }
         }
-        
+
         //Updates user Password
         public void UpdateUserPassword(string password, int id)
         {
@@ -293,7 +307,7 @@ namespace Device_Management_App.Classes
                 sqlConnection.Close();
             }
         }
-        
+
         //Checks if user password is valid
         public bool IsValidPassword(string password, int id)
         {
@@ -306,7 +320,7 @@ namespace Device_Management_App.Classes
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    isValid= true;
+                    isValid = true;
                 }
                 sqlConnection.Close();
                 return isValid;
@@ -317,7 +331,7 @@ namespace Device_Management_App.Classes
                 return false;
             }
         }
-        
+
         //Gets all users from the Database
         public void GetAllUsers(DataGridView dataGridView)
         {
@@ -330,19 +344,20 @@ namespace Device_Management_App.Classes
                 adapter.Fill(dataTable);
                 dataTable = new DataTable();
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             finally
             {
-                sqlConnection.Close ();
+                sqlConnection.Close();
             }
         }
 
 
         //Populates Devices in Device Request Form
-        public  Devices PopulateRequest(int id)
+        public Devices PopulateRequest(int id)
         {
             Devices dev = new Devices();
 
@@ -362,13 +377,14 @@ namespace Device_Management_App.Classes
                     dev.Barcode = reader.GetString(5);
                     dev.Status = reader.GetBoolean(6);
                     dev.IsAvailable = reader.GetBoolean(7);
-                    dev.BorrowerId=reader.GetInt32(8);
+                    dev.BorrowerId = reader.GetInt32(8);
                     dev.ExpectedReturnDate = reader.GetDateTime(9);
                 }
-                return  dev;
-            }catch(Exception ex)
+                return dev;
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show (ex.Message);
+                MessageBox.Show(ex.Message);
                 return dev;
             }
             finally
@@ -385,7 +401,7 @@ namespace Device_Management_App.Classes
                 sqlStatement = $"INSERT INTO [Device_Manager]([User_Id], [Device_Id],[Technician_Id], [Admin_Id], [Name], [Department], [Description], [Brand], [Type], [Model], [Barcode], [Status], [TransactionType], [TransactionDate])" +
                     $"VALUES('{deviceManager.UserId}','{deviceManager.DeviceId}','{deviceManager.TechnicianId}'," +
                     $"'{deviceManager.AdminId}','{deviceManager.Name}','{deviceManager.Department}','{deviceManager.Description}'," +
-                    $"'{deviceManager.Brand}','{deviceManager.Type}','{deviceManager.Model}','{deviceManager.Barcode}','{deviceManager.Status}','{deviceManager.TransactionType}',CONVERT(DATE,'{deviceManager.TransactionDate}',103))";
+                    $"'{deviceManager.Brand}','{deviceManager.Type}','{deviceManager.Model}','{deviceManager.Barcode}','{deviceManager.Status}','{deviceManager.TransactionType}','{deviceManager.TransactionDate.ToString("yyyy-MM-dd HH:mm:ss.fff")}')";
                 sqlConnection.Open();
                 command = new SqlCommand(sqlStatement, sqlConnection);
                 adapter.InsertCommand = command;
@@ -395,7 +411,8 @@ namespace Device_Management_App.Classes
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }finally
+            }
+            finally
             {
                 sqlConnection.Close();
             }
@@ -444,7 +461,7 @@ namespace Device_Management_App.Classes
         }
         public void LoadReportHistory(DataGridView dgv, int deviceId)
         {
-            
+
             dataTable = new DataTable();
             sqlStatement = $"SELECT * FROM [Device_Manager] WHERE [Device_Id] = '{deviceId}' ";
             try
@@ -464,11 +481,11 @@ namespace Device_Management_App.Classes
             }
         }
 
-        public void UpdateDeviceManagerRequest(int id, bool status, int userId,int deviceId,string transactiontype, bool isApproved, int technicianId)
+        public void UpdateDeviceManagerRequest(int id, bool status, int userId, int deviceId, string transactiontype, bool isApproved, int technicianId)
         {
             try
             {
-             
+
                 sqlStatement = $@"UPDATE [DEVICE_MANAGER] SET Status = '{status}', TransactionType ='{transactiontype}', Technician_Id = '{technicianId}',IsApproved = '{isApproved}', DecisionDate = GETDATE() WHERE Id = {id}";
                 sqlConnection.Open();
                 command = new SqlCommand(sqlStatement, sqlConnection);
@@ -480,7 +497,7 @@ namespace Device_Management_App.Classes
                 {
                     sqlStatement = $@"UPDATE [DEVICES] SET IsAvailable = '{status}' WHERE Id = {deviceId}";
                 }
-               
+
                 command = new SqlCommand(sqlStatement, sqlConnection);
                 command.ExecuteNonQuery();
 
@@ -498,6 +515,78 @@ namespace Device_Management_App.Classes
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void SaveDeviceType(DeviceTypesModel type)
+        {
+            adapter = new SqlDataAdapter();
+            sqlStatement = "INSERT INTO DeviceTypes(DeviceTypes)" +
+                            "Values(@Type)";
+            dataTable = new DataTable();
+            try
+            {
+                sqlConnection.Open();
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                command.Parameters.AddWithValue("@Type", type.DeviceType);
+                adapter.InsertCommand = command;
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show($"Type:{type.DeviceType} Added successfully");
+            
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+           
+
+        }
+        
+        public void GetAllDeviceTypes(DataGridView dgv)
+        {
+            adapter = new SqlDataAdapter();
+            sqlStatement = "SELECT * FROM DeviceTypes";
+            dataTable = new DataTable();
+            try
+            {
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter(sqlStatement, sqlConnection);
+                adapter.Fill(dataTable);
+                dgv.DataSource = dataTable;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+        public void DeleteDeviceType(DeviceTypesModel type)
+        {
+            adapter = new SqlDataAdapter();
+            sqlStatement = "DELETE FROM DeviceTypes WHERE Id = @Id";
+            dataTable = new DataTable();
+            try
+            {
+                sqlConnection.Open();
+                command = new SqlCommand(sqlStatement, sqlConnection);
+                command.Parameters.AddWithValue("@Id", type.Id);
+                adapter.DeleteCommand = command;
+                adapter.DeleteCommand.ExecuteNonQuery();
+                MessageBox.Show($"{type.DeviceType} Deleted Successfully");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             finally
             {

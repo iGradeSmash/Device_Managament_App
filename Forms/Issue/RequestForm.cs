@@ -147,5 +147,10 @@ namespace Device_Managament_App
 
             connection.SubmitRequest(deviceManager);
         }
+
+        private void dtTransactionDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
