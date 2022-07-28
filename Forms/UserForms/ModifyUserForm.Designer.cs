@@ -44,8 +44,9 @@
             this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deviceTypesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNewUser = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
-            this.btnDevicesSave = new System.Windows.Forms.Button();
+            this.btnUserSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
@@ -81,6 +82,7 @@
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbxRole = new System.Windows.Forms.ComboBox();
             this.txtbxCurrentRole = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,7 +93,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.usersTableAdapter2 = new Device_Managament_App.UsersDbSetMainTableAdapters.UsersTableAdapter();
-            this.cmbxRole = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.devicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.device_Management_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceTypesBindingSource)).BeginInit();
@@ -172,8 +173,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnNewUser);
             this.groupBox1.Controls.Add(this.btnChangePassword);
-            this.groupBox1.Controls.Add(this.btnDevicesSave);
+            this.groupBox1.Controls.Add(this.btnUserSave);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,6 +187,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actions";
             // 
+            // btnNewUser
+            // 
+            this.btnNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
+            this.btnNewUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewUser.Enabled = false;
+            this.btnNewUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
+            this.btnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewUser.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnNewUser.Location = new System.Drawing.Point(14, 25);
+            this.btnNewUser.Name = "btnNewUser";
+            this.btnNewUser.Size = new System.Drawing.Size(222, 54);
+            this.btnNewUser.TabIndex = 16;
+            this.btnNewUser.Text = "New User";
+            this.btnNewUser.UseVisualStyleBackColor = false;
+            this.btnNewUser.Visible = false;
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
+            // 
             // btnChangePassword
             // 
             this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(178)))), ((int)(((byte)(120)))));
@@ -193,7 +213,7 @@
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnChangePassword.Location = new System.Drawing.Point(262, 30);
+            this.btnChangePassword.Location = new System.Drawing.Point(262, 93);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(228, 54);
             this.btnChangePassword.TabIndex = 15;
@@ -201,33 +221,34 @@
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
-            // btnDevicesSave
+            // btnUserSave
             // 
-            this.btnDevicesSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
-            this.btnDevicesSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDevicesSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
-            this.btnDevicesSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDevicesSave.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevicesSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnDevicesSave.Location = new System.Drawing.Point(6, 30);
-            this.btnDevicesSave.Name = "btnDevicesSave";
-            this.btnDevicesSave.Size = new System.Drawing.Size(250, 54);
-            this.btnDevicesSave.TabIndex = 13;
-            this.btnDevicesSave.Text = "Save";
-            this.btnDevicesSave.UseVisualStyleBackColor = false;
-            this.btnDevicesSave.Click += new System.EventHandler(this.btnDevicesSave_Click);
+            this.btnUserSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(78)))), ((int)(((byte)(245)))));
+            this.btnUserSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
+            this.btnUserSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserSave.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnUserSave.Location = new System.Drawing.Point(262, 25);
+            this.btnUserSave.Name = "btnUserSave";
+            this.btnUserSave.Size = new System.Drawing.Size(222, 54);
+            this.btnUserSave.TabIndex = 13;
+            this.btnUserSave.Text = "Save";
+            this.btnUserSave.UseVisualStyleBackColor = false;
+            this.btnUserSave.Click += new System.EventHandler(this.btnDevicesSave_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnUpdate.Location = new System.Drawing.Point(6, 93);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(250, 52);
+            this.btnUpdate.Size = new System.Drawing.Size(230, 52);
             this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -572,6 +593,19 @@
             this.groupBox3.Text = "Personal Info";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // cmbxRole
+            // 
+            this.cmbxRole.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roleBindingSource, "Id", true));
+            this.cmbxRole.DataSource = this.roleBindingSource;
+            this.cmbxRole.DisplayMember = "RoleName";
+            this.cmbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
+            this.cmbxRole.FormattingEnabled = true;
+            this.cmbxRole.Location = new System.Drawing.Point(130, 253);
+            this.cmbxRole.Name = "cmbxRole";
+            this.cmbxRole.Size = new System.Drawing.Size(274, 29);
+            this.cmbxRole.TabIndex = 35;
+            this.cmbxRole.ValueMember = "Id";
+            // 
             // txtbxCurrentRole
             // 
             this.txtbxCurrentRole.Enabled = false;
@@ -661,19 +695,6 @@
             // 
             this.usersTableAdapter2.ClearBeforeFill = true;
             // 
-            // cmbxRole
-            // 
-            this.cmbxRole.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roleBindingSource, "Id", true));
-            this.cmbxRole.DataSource = this.roleBindingSource;
-            this.cmbxRole.DisplayMember = "RoleName";
-            this.cmbxRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(116)))));
-            this.cmbxRole.FormattingEnabled = true;
-            this.cmbxRole.Location = new System.Drawing.Point(130, 253);
-            this.cmbxRole.Name = "cmbxRole";
-            this.cmbxRole.Size = new System.Drawing.Size(274, 29);
-            this.cmbxRole.TabIndex = 35;
-            this.cmbxRole.ValueMember = "Id";
-            // 
             // ModifyUserForm
             // 
             this.AcceptButton = this.btnClose;
@@ -727,7 +748,7 @@
         private System.Windows.Forms.BindingSource deviceManagementdbDataSet1BindingSource;
         private System.Windows.Forms.BindingSource deviceTypesBindingSource3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDevicesSave;
+        private System.Windows.Forms.Button btnUserSave;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvUsers;
@@ -777,5 +798,6 @@
         private System.Windows.Forms.TextBox txtbxCurrentRole;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbxRole;
+        private System.Windows.Forms.Button btnNewUser;
     }
 }

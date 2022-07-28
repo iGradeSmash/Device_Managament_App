@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Device_Managament_App;
 using Device_Managament_App.Forms.Issue;
 using Device_Managament_App.Forms.ReportForms;
+using Device_Managament_App.Forms.SettingsForms;
 using Device_Managament_App.Forms.UserForms;
 using Device_Managament_App.Utility;
 using Device_Management_App.Classes;
@@ -32,6 +33,8 @@ namespace Device_Management_App
 
             if (UtilManager.Variables.RoleId == 1)
             {
+                tsSettings.Enabled = true;
+                tsSettings.Visible = true;
                 btnReports.Enabled = true;
                 btnReports.Visible = true;
                 btnUsers.Enabled = true;
@@ -268,6 +271,18 @@ namespace Device_Management_App
         {
             MainReportForm reportForm = new MainReportForm();
             reportForm.ShowDialog();
+        }
+
+        private void deviceTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeviceTypesForm deviceTypesForm = new DeviceTypesForm();
+            deviceTypesForm.ShowDialog();
+        }
+
+        private void tsDeviceTypes_Click(object sender, EventArgs e)
+        {
+            DeviceTypesForm deviceTypesForm = new DeviceTypesForm();
+            deviceTypesForm.ShowDialog();
         }
     }
 }

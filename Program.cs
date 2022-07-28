@@ -1,4 +1,5 @@
 ﻿using Device_Managament_App.Forms.ReportForms;
+using Device_Managament_App.Forms.SettingsForms;
 using Device_Managament_App.Forms.UserForms;
 using Device_Management_App;
 using System;

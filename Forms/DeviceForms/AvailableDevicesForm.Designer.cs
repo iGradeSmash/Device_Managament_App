@@ -86,6 +86,8 @@
             this.deviceManagementdbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devicesTableAdapter = new Device_Managament_App.Device_Management_dbDataSetTableAdapters.DevicesTableAdapter();
             this.deviceTypesTableAdapter = new Device_Managament_App.Device_Management_dbDataSet1TableAdapters.DeviceTypesTableAdapter();
+            this.tsSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsDeviceTypes = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.connectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             mainPanel = new System.Windows.Forms.Panel();
@@ -522,6 +524,7 @@
             // 
             this.file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
+            this.tsSettings,
             this.changePassordToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.file.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -713,6 +716,23 @@
             // 
             this.deviceTypesTableAdapter.ClearBeforeFill = true;
             // 
+            // tsSettings
+            // 
+            this.tsSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsDeviceTypes});
+            this.tsSettings.Enabled = false;
+            this.tsSettings.Name = "tsSettings";
+            this.tsSettings.Size = new System.Drawing.Size(194, 22);
+            this.tsSettings.Text = "Settings";
+            this.tsSettings.Visible = false;
+            // 
+            // tsDeviceTypes
+            // 
+            this.tsDeviceTypes.Name = "tsDeviceTypes";
+            this.tsDeviceTypes.Size = new System.Drawing.Size(180, 22);
+            this.tsDeviceTypes.Text = "Device Types";
+            this.tsDeviceTypes.Click += new System.EventHandler(this.tsDeviceTypes_Click);
+            // 
             // connectionBindingSource1
             // 
             this.connectionBindingSource1.DataSource = typeof(Device_Management_App.Classes.Connection);
@@ -826,5 +846,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePassordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsSettings;
+        private System.Windows.Forms.ToolStripMenuItem tsDeviceTypes;
     }
 }
