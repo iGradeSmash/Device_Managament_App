@@ -30,8 +30,6 @@ namespace Device_Management_App
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,8 +66,6 @@ namespace Device_Management_App
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(188)))), ((int)(((byte)(247)))));
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -83,36 +79,12 @@ namespace Device_Management_App
             this.panel1.Size = new System.Drawing.Size(257, 492);
             this.panel1.TabIndex = 0;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(80, 435);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(174, 16);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Lenice Brissett - ID#: 2017002523";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(87, 415);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(166, 16);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Nicola Gray - ID#: 2017001543";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(70, 395);
+            this.label12.Location = new System.Drawing.Point(59, 395);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(185, 16);
             this.label12.TabIndex = 6;
@@ -124,7 +96,7 @@ namespace Device_Management_App
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(85, 375);
+            this.label5.Location = new System.Drawing.Point(59, 411);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 16);
             this.label5.TabIndex = 5;
@@ -136,7 +108,7 @@ namespace Device_Management_App
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(185, 355);
+            this.label4.Location = new System.Drawing.Point(107, 379);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 16);
             this.label4.TabIndex = 4;
@@ -147,7 +119,7 @@ namespace Device_Management_App
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(168, 234);
+            this.label3.Location = new System.Drawing.Point(94, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 24);
             this.label3.TabIndex = 3;
@@ -158,7 +130,7 @@ namespace Device_Management_App
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 205);
+            this.label2.Location = new System.Drawing.Point(16, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(233, 24);
             this.label2.TabIndex = 2;
@@ -170,7 +142,7 @@ namespace Device_Management_App
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(75, 177);
+            this.label1.Location = new System.Drawing.Point(58, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 1;
@@ -226,7 +198,7 @@ namespace Device_Management_App
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 8F);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(46)))));
-            this.label10.Location = new System.Drawing.Point(60, 341);
+            this.label10.Location = new System.Drawing.Point(47, 342);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 13;
@@ -455,8 +427,6 @@ namespace Device_Management_App
         private System.Windows.Forms.Label errorMessageLabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
     }
 }

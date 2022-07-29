@@ -156,6 +156,7 @@
             this.dtTransactionDate.Size = new System.Drawing.Size(200, 26);
             this.dtTransactionDate.TabIndex = 10;
             this.dtTransactionDate.Value = new System.DateTime(2022, 6, 15, 0, 0, 0, 0);
+            this.dtTransactionDate.ValueChanged += new System.EventHandler(this.dtTransactionDate_ValueChanged);
             // 
             // label4
             // 
